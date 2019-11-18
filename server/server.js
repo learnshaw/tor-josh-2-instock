@@ -12,4 +12,7 @@ app.listen(8080, () => {
     console.log("server is ready");
 })
 
+// GET request for warehouses' data
+const warehousesRoute = require("./Routes/warehouse.js");
+app.use("/", warehousesRoute);
 
