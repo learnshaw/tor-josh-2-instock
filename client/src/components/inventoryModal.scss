@@ -1,0 +1,15 @@
+.add__product {
+    &-form{
+        background-color: red;
+    }
+
+    &-section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-entry-field{
+        display: flex;
+        flex-direction: column;
+    }
+}
