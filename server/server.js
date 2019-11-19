@@ -20,3 +20,4 @@ app.use("/", warehousesRoute);
 
 const inventoryRoute = require('./Routes/inventory.js')
 app.use("/inventory", inventoryRoute);
+
