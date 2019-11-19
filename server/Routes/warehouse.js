@@ -37,26 +37,31 @@ router.get("/:id",(request,response)=>{
 })
 
 router.post ('/', ((request,  response)=>{
+    console.log(request.body)
     const newID = locationData.length; 
     const newAddedLocation ={
 
         "id": `L${newID}`,
         "name":request.body.name,
-        "street":request.body.street,
-        "suiteNum":request.body.suiteNum,
-        "city":request.body.city,
-        "province":request.body.province,
-        "postal":request.body.postal,
+        "address": {
+            "street":request.body.address.street,
+            "suiteNum":request.body.address.suiteNum,
+            "city":request.body.address.city,
+            "province":request.body.address.province,
+            "postal":request.body.address.postal
+            },
         "inventoryCategories":request.body.inventoryCategories,
-        "name":request.body.name,
-        "title":request.body.title,
-        "phone":request.body.phone,
-        "email":request.body.email,
+        "contact": {
+            "name":request.body.contact.name,
+            "title":request.body.contact.title,
+            "phone":request.body.contact.phone,
+            "email":request.body.contact.email
+        }
     }
 
-    if (request.body.name && request.body.street && request.body.suiteNum && request.body.city && request.body.province && request.body.inventoryCategories && request.body.postal && request.body.name && request.body.title && request.body.phone && request.body.email){
+    if (request.body.name && request.body.address.street && request.body.address.suiteNum && request.body.address.city && request.body.address.province && request.body.inventoryCategories && request.body.address.postal && request.body.contact.name && request.body.contact.title && request.body.contact.phone && request.body.contact.email){
         locationData.push(newAddedLocation)
-        response.send(locationData)
+        response.send(newAddedLocation)
     }
     else{
         return response.status(400).send('Data is Malformed or a Field is Missing');
