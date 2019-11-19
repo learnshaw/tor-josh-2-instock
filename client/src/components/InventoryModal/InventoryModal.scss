@@ -1,5 +1,27 @@
 @import '.././styles/Base/Base.scss';
 
+.modal{
+    &__parent {
+        position: absolute;
+        top: 40px;
+        left: 100px;
+        right: 100px;
+        bottom: 40px;
+        overflow: auto;
+        background-color: white;
+        padding: 10px 30px;
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: grey;
+    }
+}
+
 .add__product {
     &-title{
         @include tablet{
@@ -68,3 +90,5 @@
         }
     }
 }
+
+

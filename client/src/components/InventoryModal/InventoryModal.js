@@ -1,23 +1,15 @@
 import React from 'react';
 import Modal from 'react-modal';
+// import Switch from "react-switch";
 import MediaQuery from 'react-responsive';
 import ("./InventoryModal.scss");
+
  
 export default class InventoryModal extends React.Component {
     state = {
-        modalIsOpen: false
+        modalIsOpen: false,
+        inStock: true
       };
-   
-    customStylesTablet = {
-        content : {
-          top: '60%',
-          left: '50%',
-          right: 'auto',
-          bottom: 'auto',
-        //   marginRight           : '-50%',
-          transform: 'translate(-50%, -50%)',  
-        }
-    };
     
     openModal() {
       this.setState({modalIsOpen: true});
@@ -42,8 +34,9 @@ export default class InventoryModal extends React.Component {
                 isOpen={this.state.modalIsOpen}
                 onAfterOpen={(e)=> this.afterOpenModal()}
                 onRequestClose={(e)=> {this.closeModal()}}
-                style={this.customStylesTablet}
                 contentLabel="Example Modal Tablet"
+                className = "modal__parent"
+                overlayClassName = "modal__overlay"
             >
                 <h2 className="add__product-title">Create New</h2>
                 <form className="add__product-form" onSubmit={(e) => {this.closeModal(e)}}>    
@@ -73,7 +66,8 @@ export default class InventoryModal extends React.Component {
                             </div>
                             <div className="add__product-entry-group">
                                 <label>STATUS</label>
-                                <input className="add__product-entry-field hide" type="checkbox"/>
+                                    <label>InStock</label>
+                                    <input className="add__product-entry-field hide" type="checkbox"/>
                             </div>
                         </article>
                     </section>
