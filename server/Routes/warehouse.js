@@ -36,11 +36,11 @@ router.get("/:id",(request,response)=>{
    
 })
 
-router.post ('/', (request,  response=>{
+router.post ('/', ((request,  response)=>{
     const newID = locationData.length; 
     const newAddedLocation ={
 
-        "id": `L${id}`,
+        "id": `L${newID}`,
         "name":request.body.name,
         "street":request.body.street,
         "suiteNum":request.body.suiteNum,
