@@ -19,11 +19,11 @@ router.get("/",(request,response) => {
 // GET WareHouse inventory
 
 router.get("/:id",(request,response)=>{
-    console.log(request.params.id);
+    
     
 
     const findInv = inventoryData.filter(item=>{
-        console.log(item.warehouseId);
+       
         
         return request.params.id == item.warehouseId
     })
@@ -37,7 +37,7 @@ router.get("/:id",(request,response)=>{
 })
 
 router.post ('/', ((request,  response)=>{
-    console.log(request.body)
+    
     const newID = locationData.length; 
     const newAddedLocation ={
 
