@@ -38,7 +38,7 @@ export default class InventoryModal extends React.Component {
       return (
         <div>
             <button onClick={(e)=> {this.openModal()}}>Open Modal</button>
-            <MediaQuery minDeviceWidth={768}>
+            {/* <MediaQuery minDeviceWidth={768}> */}
             <Modal
                 isOpen={this.state.modalIsOpen}
                 onAfterOpen={(e)=> this.afterOpenModal()}
@@ -46,45 +46,49 @@ export default class InventoryModal extends React.Component {
                 style={this.customStylesTablet}
                 contentLabel="Example Modal Tablet"
             >
-                <form className="add__product-form" onSubmit={(e) => {this.closeModal(e)}}>
-                    <h2>Create New</h2>
-                    <div className="add__product-section">
-                        <div className="add__product-entry-field">
-                            <label>NAME</label>
-                            <input placeholder="Name" name="name"/>
-                        </div>
-                        <div className="add__product-entry-field">
-                            <label>CITY</label>
-                            <input placeholder="City" name="city"/>
-                        </div>
-                        <div className="add__product-entry-field">
-                            <label>QUANTITY</label>
-                            <input placeholder="0" name="qunatity"/>
-                        </div>
-                    </div>
-                    <div className="add__product-section">
-                        <div className="add__product-entry-field">
-                            <label>LAST ORDERED</label>
-                            <input placeholder="yyyy-mm-dd" name="lastOrdered"/>
-                        </div>
-                        <div className="add__product-entry-field"></div>
-                            <label>COUNTRY</label>
-                            <input placeholder="Canada" name="country"/>
-                        </div>
-                        <div className="add__product-entry-field"></div>
-                            <label>STATUS</label>
-                            <input placeholder="0" name="qunatity"/>
-                        </div>
-                    </div>
-                    <label>ITEM DESCRIPTION</label>
-                    <input placeholder="0" name="(Optional)"/>
-                    <div className="add__product-form-buttons">
+                <h2>Create New</h2>
+                <form className="add__product-form" onSubmit={(e) => {this.closeModal(e)}}>    
+                    <section className="add__product-section">
+                        <article className="add__product-article">
+                            <div className="add__product-entry-group">
+                                <label>NAME</label>
+                                <input className="add__product-entry-field" placeholder="Name" name="name"/>
+                            </div>
+                            <div className="add__product-entry-group">
+                                <label>CITY</label>
+                                <input className="add__product-entry-field" placeholder="City" name="city"/>
+                            </div>
+                            <div className="add__product-entry-group">
+                                <label>QUANTITY</label>
+                                <input className="add__product-entry-field" placeholder="0" name="quantity"/>
+                            </div>
+                        </article>
+                        <article className="add__product-article">
+                            <div className="add__product-entry-group">
+                                <label>LAST ORDERED</label>
+                                <input className="add__product-entry-field" placeholder="yyyy-mm-dd" name="lastOrdered"/>
+                            </div>
+                            <div className="add__product-entry-group">
+                                <label>COUNTRY</label>
+                                <input className="add__product-entry-field" placeholder="Canada" name="country"/>
+                            </div>
+                            <div className="add__product-entry-group">
+                                <label>STATUS</label>
+                                <input placeholder="0" name="quantity"/>
+                            </div>
+                        </article>
+                    </section>
+                    <article className="add__product-article">
+                        <label>ITEM DESCRIPTION</label>
+                        <input placeholder="(Optional)" name="description"/>
+                    </article>
+                    <article className="add__product-buttons">
                         <button type="submit">CANCEL</button>
                         <button type="submit">SAVE</button>
-                    </div>
+                    </article>
                 </form>
             </Modal>
-            </MediaQuery>
+            {/* </MediaQuery> */}
         </div>
       );
     }

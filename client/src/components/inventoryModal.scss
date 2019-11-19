@@ -1,15 +1,32 @@
 .add__product {
     &-form{
         background-color: red;
-    }
-
-    &-section{
         display: flex;
         flex-direction: column;
+    }
+
+    &-section {
+        display:flex;
+    }
+
+    &-article{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-entry-group{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
     }
 
     &-entry-field{
+        width: 220px;
+        height:48px;
+    }
+
+    &-buttons{
+        justify-content: flex-end;
         display: flex;
-        flex-direction: column;
     }
 }
