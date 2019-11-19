@@ -3,13 +3,20 @@
 .modal{
     &__parent {
         position: absolute;
-        top: 40px;
-        left: 100px;
-        right: 100px;
-        bottom: 40px;
         overflow: auto;
         background-color: white;
+        top: 40px;
+        left: 40px;
+        right: 40px;
+        bottom: 40px;
         padding: 10px 30px;
+
+        @include tablet{
+            top: 40px;
+            left: 100px;
+            right: 100px;
+            bottom: 40px;
+        }
     }
 
     &__overlay {
@@ -65,6 +72,13 @@
             width: 220px;
             height:48px;
         }
+    }
+
+    &-instock{
+        display: flex;
+        border: none;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &-description{

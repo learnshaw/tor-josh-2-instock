@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-// import Switch from "react-switch";
-import MediaQuery from 'react-responsive';
+import Switch from "react-switch";
 import ("./InventoryModal.scss");
 
  
@@ -24,6 +23,10 @@ export default class InventoryModal extends React.Component {
       e.preventDefault()
       console.log(e.target.name.value)
       this.setState({modalIsOpen: false});
+    }
+
+    switchHandle(e) {
+        this.setState({inStock: !this.state.inStock});
     }
    
     render() {
@@ -66,8 +69,10 @@ export default class InventoryModal extends React.Component {
                             </div>
                             <div className="add__product-entry-group">
                                 <label>STATUS</label>
-                                    <label>InStock</label>
-                                    <input className="add__product-entry-field hide" type="checkbox"/>
+                                <article className="add__product-entry-field add__product-instock">
+                                    <label>In Stock</label>
+                                    <Switch onChange={(e)=> {this.switchHandle(e)}} checked={this.state.inStock}></Switch>
+                                </article>
                             </div>
                         </article>
                     </section>
