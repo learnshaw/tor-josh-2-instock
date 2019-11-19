@@ -37,19 +37,24 @@ router.get("/:id",(request,response)=>{
 })
 
 router.post ('/', (request,  response=>{
+    const newID = locationData.length; 
     const newAddedLocation ={
 
-        "warehouse":request.body.warehouse,
-        "address":request.body.address,
-        "contact name":request.body.contact name,
-        "phone number":request.body.phone number,
-        "categories":request.body.categories,
-        "location":request.body.location,
-        "position":request.body.position,
+        "id": `L${id}`,
+        "name":request.body.name,
+        "street":request.body.street,
+        "suiteNum":request.body.suiteNum,
+        "city":request.body.city,
+        "province":request.body.province,
+        "postal":request.body.postal,
+        "inventoryCategories":request.body.inventoryCategories,
+        "name":request.body.name,
+        "title":request.body.title,
+        "phone":request.body.phone,
         "email":request.body.email,
     }
 
-    if (request.body.warehouse && request.body.address && request.body.address && request.body.contactname && request.body.phonenumber && request.body.categories && request.body.location && request.body.position && request.body.email){
+    if (request.body.name && request.body.street && request.body.suiteNum && request.body.city && request.body.province && request.body.inventoryCategories && request.body.postal && request.body.name && request.body.title && request.body.phone && request.body.email){
         locationData.push(newAddedLocation)
         response.send(locationData)
     }
