@@ -1,0 +1,70 @@
+@import '.././styles/Base/Base.scss';
+
+.add__product {
+    &-title{
+        @include tablet{
+            margin-bottom: 24px;
+        }
+    }
+    &-form{
+        @include tablet{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &-section {
+        display:flex;
+        justify-content: space-between;
+    }
+
+    &-article{
+        display: flex;
+        flex-direction: column;
+        @include tablet{
+            margin-right: 24px;
+        }
+    }
+
+    &-entry-group{
+        display: flex;
+        flex-direction: column;
+        @include tablet{
+            margin-bottom: 24px;
+        }
+    }
+
+    &-entry-field{
+        margin-top: 10px;
+        padding-left: 5px;
+        border: 1px solid black;
+        border-radius: 4px;
+        @include tablet{
+            width: 220px;
+            height:48px;
+        }
+    }
+
+    &-description{
+        margin-top: 10px;
+        padding-left: 5px;
+        border: 1px solid black;    
+        border-radius: 4px;
+        @include tablet{
+            width: 480px;
+            height: 80px;
+        }
+    }
+
+    &-buttons{
+        justify-content: flex-end;
+        display: flex;
+        margin-top: 24px;
+    }
+
+    &-button{
+        @include tablet{
+            margin-right: 24px;
+        }
+    }
+}

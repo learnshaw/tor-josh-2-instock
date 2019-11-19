@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import MediaQuery from 'react-responsive';
-import ("./inventoryModal.scss");
+import ("./InventoryModal.scss");
  
 export default class InventoryModal extends React.Component {
     state = {
@@ -10,12 +10,12 @@ export default class InventoryModal extends React.Component {
    
     customStylesTablet = {
         content : {
-          top                   : '50%',
-          left                  : '50%',
-          right                 : 'auto',
-          bottom                : 'auto',
-          marginRight           : '-50%',
-          transform             : 'translate(-50%, -50%)'
+          top: '60%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+        //   marginRight           : '-50%',
+          transform: 'translate(-50%, -50%)',  
         }
     };
     
@@ -38,7 +38,6 @@ export default class InventoryModal extends React.Component {
       return (
         <div>
             <button onClick={(e)=> {this.openModal()}}>Open Modal</button>
-            {/* <MediaQuery minDeviceWidth={768}> */}
             <Modal
                 isOpen={this.state.modalIsOpen}
                 onAfterOpen={(e)=> this.afterOpenModal()}
@@ -46,7 +45,7 @@ export default class InventoryModal extends React.Component {
                 style={this.customStylesTablet}
                 contentLabel="Example Modal Tablet"
             >
-                <h2>Create New</h2>
+                <h2 className="add__product-title">Create New</h2>
                 <form className="add__product-form" onSubmit={(e) => {this.closeModal(e)}}>    
                     <section className="add__product-section">
                         <article className="add__product-article">
@@ -74,17 +73,17 @@ export default class InventoryModal extends React.Component {
                             </div>
                             <div className="add__product-entry-group">
                                 <label>STATUS</label>
-                                <input placeholder="0" name="quantity"/>
+                                <input className="add__product-entry-field hide" type="checkbox"/>
                             </div>
                         </article>
                     </section>
                     <article className="add__product-article">
                         <label>ITEM DESCRIPTION</label>
-                        <input placeholder="(Optional)" name="description"/>
+                        <input className="add__product-description" placeholder="(Optional)" name="description"/>
                     </article>
                     <article className="add__product-buttons">
-                        <button type="submit">CANCEL</button>
-                        <button type="submit">SAVE</button>
+                        <button className="add__product-button" type="submit">CANCEL</button>
+                        <button className="add__product-button" type="submit">SAVE</button>
                     </article>
                 </form>
             </Modal>
