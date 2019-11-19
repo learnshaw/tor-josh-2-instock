@@ -11,6 +11,15 @@ router.get('/',(request,response) => {
     response.send(inventoryData);
 })
 
+router.delete('/:id',(request,response)=>{
+    if (request.params.id){
+      const inventoryList=inventoryData.filter(item=>item.id!==request.params.id)
+      response.send(inventoryList)
+      }else{
+       response.status(400)
+      }
+})
+
 // added by Lindsay 
 // get inventory item
 
@@ -56,3 +65,4 @@ router.post('/', (request, response) => {
 });
 
 module.exports = router;
+
