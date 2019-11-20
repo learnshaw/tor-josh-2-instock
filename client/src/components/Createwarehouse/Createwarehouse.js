@@ -8,18 +8,19 @@ class Createwarehouse extends React.Component{
 
   render(){
     const {street,suiteNum,city,province,postal}=this.props.data.address
-    const address=`${suiteNum} ,${street},${city},${province},${postal}`;
+    // const address=`${suiteNum} ,${street},${city},${province},${postal}`;
+    const address=`${street},${city},${province}`;
     const {name,title,phone,email}=this.props.data.contact
 
     return(
-      <section className="location">
+    <Link className="location" to={`/warehouses/${this.props.data.id}`}>
         <div className="location__mobile-tablet">
           <div className="location__name-address">
             <p className="location__name">{this.props.data.name}</p>
             <p>{address}</p>
           </div>
           <div className="location__arrow-right-mobile-tablet">
-           <Link to={`/warehouses/${this.props.data.id}`}><img src={arrowRight}></img></Link> 
+          <img src={arrowRight}></img>
           </div>
          </div>
          <div className="location__tablet-flex">
@@ -36,10 +37,9 @@ class Createwarehouse extends React.Component{
            </div>
          </div>
          <div className="location__arrow-right-desktop">
-          <Link to="/warehouses/:id"><img src={arrowRight}></img></Link> 
+          <img src={arrowRight}></img>
          </div>
-     </section>
-
+      </Link>
     )
   }
 }

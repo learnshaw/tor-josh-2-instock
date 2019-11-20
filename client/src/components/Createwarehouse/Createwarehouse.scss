@@ -5,25 +5,27 @@
     @include font-h3-subheader() ;
     overflow: hidden;
     display: flex;
+    text-decoration: none;
+    color:$color-background-text;
 
 
     @include mobile{
-     flex-direction: column;
-     @include margin-left-right-mobile();
-     margin-top:$margin-three;
-     justify-content: space-between;
+      flex-direction: column;
+      @include margin-left-right-mobile();
+      margin-top:$margin-three;
+      justify-content: space-between;
     }
     @include tablet{
-     margin-top:$margin-four;
-     flex-direction: column;
-     @include margin-left-right-tablet();
+      margin-top:$margin-four;
+      flex-direction: column;
+      @include margin-left-right-tablet();
     }
 
     @include desktop{
-        display: flex;
-        flex-direction: row;
-        border-bottom: 1px solid $color-text-field-border ;
-        @include margin-left-right-desktop();
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid $color-text-field-border ;
+      @include margin-left-right-desktop();
        
     }
     
@@ -71,7 +73,6 @@
            display: flex;
            padding-bottom:$padding-two;
            border-bottom: 1px solid $color-text-field-border ;
-
        }
        @include desktop{
            width:70%;

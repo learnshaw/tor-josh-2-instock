@@ -24,12 +24,12 @@ class Warehouses extends React.Component{
 
       return(
         <>
-        <section className="location-top">
+         <section className="location-top">
           <h1>Locations</h1>
-           <div className="location-top__input-box">
-            <input className="location-top__input" placeholder="Search"></input>
-            <img className="location-top__search-icon" src={search} alt="search-icon"/>
-           </div>
+            <div className="location-top__input-box">
+             <input className="location-top__input" placeholder="Search"></input>
+             <img className="location-top__search-icon" src={search} alt="search-icon"/>
+            </div>
          </section>
          <div className="location-headers">
            <p className="location-headers__cell">WAREHOUSE</p>
