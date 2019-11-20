@@ -44,22 +44,25 @@ router.post ('/', ((request,  response)=>{
         "id": `L${newID}`,
         "name":request.body.name,
         "address": {
-            "street":request.body.address.street,
-            "suiteNum":request.body.address.suiteNum,
-            "city":request.body.address.city,
-            "province":request.body.address.province,
-            "postal":request.body.address.postal
+            "street":request.body.address,
+            "suiteNum":"101",
+            "city":request.body.address.location,
+            "province":"Ontario",
+            "postal":"M5A 8S9"
             },
-        "inventoryCategories":request.body.inventoryCategories,
+        "Categories":request.body.Categories,
         "contact": {
-            "name":request.body.contact.name,
-            "title":request.body.contact.title,
-            "phone":request.body.contact.phone,
-            "email":request.body.contact.email
+            "name":request.body.contact,
+            "title":request.body.position,
+            "phone":request.body.phone,
+            "email":request.body.email
         }
     }
 
-    if (request.body.name && request.body.address.street && request.body.address.suiteNum && request.body.address.city && request.body.address.province && request.body.inventoryCategories && request.body.address.postal && request.body.contact.name && request.body.contact.title && request.body.contact.phone && request.body.contact.email){
+    if (request.body.name && request.body.address && request.body.address.suiteNum && request.body.address.location && request.body.address.province && request.body.inventoryCategories && request.body.address.postal && request.body.contact && 
+    request.body.title && 
+    request.body.phone && 
+    request.body.email){
         locationData.push(newAddedLocation)
         response.send(newAddedLocation)
     }
