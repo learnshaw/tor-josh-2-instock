@@ -5,17 +5,25 @@
         position: absolute;
         overflow: auto;
         background-color: white;
-        top: 40px;
-        left: 40px;
-        right: 40px;
-        bottom: 40px;
         padding: 10px 30px;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
 
         @include tablet{
+            width: 576px;
             top: 40px;
             left: 100px;
             right: 100px;
             bottom: 40px;
+        }
+
+        @include desktop{
+            width: 576px;
+            left: 400px;
+            right: auto;
+            padding: 0px 48px;
         }
     }
 
@@ -31,47 +39,46 @@
 
 .add__product {
     &-title{
+        margin-bottom: 24px;
         @include tablet{
-            margin-bottom: 24px;
+            margin-top: 56px;
         }
     }
     &-form{
         @include tablet{
             display: flex;
-            flex-direction: column;
-        }
-    }
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
 
-    &-section {
-        display:flex;
-        justify-content: space-between;
-    }
-
-    &-article{
-        display: flex;
-        flex-direction: column;
-        @include tablet{
-            margin-right: 24px;
         }
     }
 
     &-entry-group{
-        display: flex;
-        flex-direction: column;
+        display: flex; 
+        flex-direction: column; 
+        margin-bottom: 15px; 
         @include tablet{
             margin-bottom: 24px;
         }
     }
 
     &-entry-field{
-        margin-top: 10px;
-        padding-left: 5px;
-        border: 1px solid black;
-        border-radius: 4px;
+        margin-top: 8px;
+        padding-left: 5px; 
+        border: 1px solid black; 
+        border-radius: 4px; 
+        width: auto; 
+        height:30px; 
         @include tablet{
             width: 220px;
             height:48px;
+            padding-left: 16px; 
         }
+    }
+
+    &-country{
+        background-color: white;
     }
 
     &-instock{
@@ -82,26 +89,46 @@
     }
 
     &-description{
-        margin-top: 10px;
-        padding-left: 5px;
+        margin-top: 10px; 
+        padding-left: 5px; 
+        padding-top: 5px; 
         border: 1px solid black;    
-        border-radius: 4px;
+        border-radius: 4px; 
+        height: 50px; 
+        width: 100%;
         @include tablet{
             width: 480px;
             height: 80px;
         }
     }
 
-    &-buttons{
+    &-buttons{ 
         justify-content: flex-end;
         display: flex;
+        flex-direction: column-reverse;
         margin-top: 24px;
+        @include tablet{
+            flex-direction: row;
+            width: 100%;
+            justify-content: flex-end;
+        }
     }
 
     &-button{
-        @include tablet{
-            margin-right: 24px;
+        height: 48px;
+        color: $color-button;
+    }
+}
+
+.button {
+    &-save{
+        background-color: $color-button;
+        color: white;
+        @include tablet {
+            width: 160px;
+            margin-left: 48px;
         }
+        
     }
 }
 

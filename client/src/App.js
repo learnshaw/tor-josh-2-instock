@@ -10,48 +10,6 @@ class App extends React.Component {
       <div className="App">
        <BrowserRouter>
        <Navigation/>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
-       <h1>hello world</h1>
        <InventoryModal></InventoryModal>
         {/* <Switch>
          <Route path="/" exact component={Warehouses}></Route>
