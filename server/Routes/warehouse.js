@@ -46,7 +46,7 @@ router.post ('/', ((request,  response)=>{
         "address": {
             "street":request.body.address,
             "suiteNum":"101",
-            "city":request.body.address.location,
+            "city":request.body.location,
             "province":"Ontario",
             "postal":"M5A 8S9"
             },
@@ -59,10 +59,13 @@ router.post ('/', ((request,  response)=>{
         }
     }
 
-    if (request.body.name && request.body.address && request.body.address.suiteNum && request.body.address.location && request.body.address.province && request.body.inventoryCategories && request.body.address.postal && request.body.contact && 
-    request.body.title && 
-    request.body.phone && 
-    request.body.email){
+    if (request.body.name && 
+        request.body.address && 
+        request.body.location && request.body.inventoryCategories && 
+        request.body.contact && 
+        request.body.title && 
+        request.body.phone && 
+        request.body.email){
         locationData.push(newAddedLocation)
         response.send(newAddedLocation)
     }
