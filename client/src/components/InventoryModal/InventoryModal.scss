@@ -13,10 +13,10 @@
 
         @include tablet{
             width: 576px;
-            top: 40px;
-            left: 100px;
-            right: 100px;
-            bottom: 40px;
+            top: 50%;
+            bottom: 0px;
+            left: 50%;
+            transform: translate(-50%, -50%)
         }
 
         @include desktop{
@@ -33,7 +33,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: grey;
+        background-color: rgba(0, 0, 0, 0.5);
     }
 }
 
@@ -99,6 +99,7 @@
         @include tablet{
             width: 480px;
             height: 80px;
+            padding-left: 16px; 
         }
     }
 

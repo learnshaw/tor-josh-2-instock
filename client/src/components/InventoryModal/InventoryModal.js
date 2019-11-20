@@ -21,7 +21,6 @@ export default class InventoryModal extends React.Component {
     }
    
     closeModal(e, clickValue) {
-      e.preventDefault()
       if (clickValue){
           return this.sendingData(
             e.target.product.value, 
@@ -37,27 +36,26 @@ export default class InventoryModal extends React.Component {
 
     switchHandle(e) {
         this.setState({inStock: !this.state.inStock});
-    }
+    } 
 
     //Post request
     sendingData(product, lastOrdered, city, country, quantity, description){
         console.log(product, lastOrdered, city, country, quantity, description, this.state.inStock)
-        // url = "";
-        // axios.post(url, {
-        //     "": product,
-        //     "": lastOrdered,
-        //     "": city,
-        //     "": country,
-        //     "": quantity,
-        //     "": description,
-        //     "": this.state.inStock
-        // })
-        // .then((response) => {
-        //     console.log(response.data)
-        // })
-        // .catch((error) => {
-        //     console.log("Could not post the data, please try again.")
-        // })
+        let url = "http://localhost:8080/inventory";
+        axios.post(url, {
+            "name": `${product}`,
+            "lastOrdered": `${lastOrdered}`,
+            "location": `${city}`,
+            "quantity": `${quantity}`,
+            "description": `${description}`,
+            "isInstock": `${this.state.inStock}`
+        })
+        .then((response) => {
+            console.log(response.data)
+        })
+        .catch((error) => {
+            console.log("Could not post the data, please try again.")
+        })
     }    
    
     render() {
@@ -119,3 +117,7 @@ export default class InventoryModal extends React.Component {
       );
     }
 }
+
+// @TODO 
+// remove console.logs
+// add scrolling button in country

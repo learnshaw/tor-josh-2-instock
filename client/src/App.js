@@ -10,7 +10,6 @@ class App extends React.Component {
       <div className="App">
        <BrowserRouter>
        <Navigation/>
-       <InventoryModal></InventoryModal>
         {/* <Switch>
          <Route path="/" exact component={Warehouses}></Route>
          <Route path="/warehouses" component={Warehouses}></Route>
