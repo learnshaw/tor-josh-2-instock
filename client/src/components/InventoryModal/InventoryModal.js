@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import Switch from "react-switch";
+import axios from "axios";
 import ("./InventoryModal.scss");
 
  
@@ -19,15 +20,45 @@ export default class InventoryModal extends React.Component {
       // this.subtitle.style.color = '#f00';
     }
    
-    closeModal(e) {
+    closeModal(e, clickValue) {
       e.preventDefault()
-      console.log(e.target.name.value)
+      if (clickValue){
+          return this.sendingData(
+            e.target.product.value, 
+            e.target.lastOrdered.value, 
+            e.target.city.value, 
+            e.target.country.value,
+            e.target.quantity.value,
+            e.target.description.value
+        )
+      }
       this.setState({modalIsOpen: false});
     }
 
     switchHandle(e) {
         this.setState({inStock: !this.state.inStock});
     }
+
+    //Post request
+    sendingData(product, lastOrdered, city, country, quantity, description){
+        console.log(product, lastOrdered, city, country, quantity, description, this.state.inStock)
+        // url = "";
+        // axios.post(url, {
+        //     "": product,
+        //     "": lastOrdered,
+        //     "": city,
+        //     "": country,
+        //     "": quantity,
+        //     "": description,
+        //     "": this.state.inStock
+        // })
+        // .then((response) => {
+        //     console.log(response.data)
+        // })
+        // .catch((error) => {
+        //     console.log("Could not post the data, please try again.")
+        // })
+    }    
    
     render() {
       return (
@@ -42,22 +73,22 @@ export default class InventoryModal extends React.Component {
                 overlayClassName = "modal__overlay"
             >
                 <h2 className="add__product-title">Create New</h2>
-                <form className="add__product-form" onSubmit={(e) => {this.closeModal(e)}}>    
+                <form className="add__product-form" onSubmit={(e) => {this.closeModal(e,"submit")}} onReset={(e) => {this.closeModal(e)}}>    
                     <div className="add__product-entry-group">
                         <label>PRODUCT</label>
-                        <input className="add__product-entry-field" placeholder="Item Name" name="name"/>
+                        <input className="add__product-entry-field" placeholder="Item Name" name="product" required/>
                     </div>
                     <div className="add__product-entry-group">
                         <label>LAST ORDERED</label>
-                        <input className="add__product-entry-field" placeholder="yyyy-mm-dd" name="lastOrdered"/>
+                        <input className="add__product-entry-field" placeholder="yyyy-mm-dd" name="lastOrdered" required/>
                     </div>
                     <div className="add__product-entry-group">
                         <label>CITY</label>
-                        <input className="add__product-entry-field" placeholder="City" name="city"/>
+                        <input className="add__product-entry-field" placeholder="City" name="city" required/>
                     </div>
                     <div className="add__product-entry-group">
                         <label>COUNTRY</label>
-                        <select className="add__product-entry-field add__product-country" name="country">
+                        <select className="add__product-entry-field add__product-country" name="country" required>
                             <option value="canada">Canada</option>
                             <option value="usa">USA</option>
                             <option value="mexico">Mexico</option>
@@ -65,7 +96,7 @@ export default class InventoryModal extends React.Component {
                     </div>
                     <div className="add__product-entry-group">
                         <label>QUANTITY</label>
-                        <input className="add__product-entry-field" placeholder="0" name="quantity"/>
+                        <input className="add__product-entry-field" placeholder="0" name="quantity" required/>
                     </div>
                     <div className="add__product-entry-group">
                         <label>STATUS</label>
@@ -79,7 +110,7 @@ export default class InventoryModal extends React.Component {
                         <textarea className="add__product-description" placeholder="(Optional)" name="description"/>
                     </article>
                     <article className="add__product-buttons">
-                        <button className="add__product-button button-cancel" type="submit">CANCEL</button>
+                        <button className="add__product-button button-cancel" type="reset">CANCEL</button>
                         <button className="add__product-button button-save" type="submit">SAVE</button>
                     </article>
                 </form>

@@ -128,7 +128,10 @@
             width: 160px;
             margin-left: 48px;
         }
-        
+    }
+    
+    &-save:hover{
+        background-color: $color-hover
     }
 }
 
