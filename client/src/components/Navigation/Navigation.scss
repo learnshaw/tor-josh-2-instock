@@ -1,4 +1,4 @@
-@import '.././styles/Base/Base.scss';
+@import '../../styles/Base/Base.scss';
 
 
 .header{
@@ -16,7 +16,7 @@
     }
     &__logo{
       height:25px;
-      margin-top:8px;
+      margin-top:10px;
       margin-bottom: $margin-one;
       @include tablet{
         padding-left:24px;

@@ -1,0 +1,142 @@
+@import '../../styles/Base/Base.scss';
+
+
+.location{
+    @include font-h3-subheader() ;
+    overflow: hidden;
+    display: flex;
+
+
+    @include mobile{
+     flex-direction: column;
+     @include margin-left-right-mobile();
+     margin-top:$margin-three;
+     justify-content: space-between;
+    }
+    @include tablet{
+     margin-top:$margin-four;
+     flex-direction: column;
+     @include margin-left-right-tablet();
+    }
+
+    @include desktop{
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid $color-text-field-border ;
+        @include margin-left-right-desktop();
+       
+    }
+    
+    &__mobile-tablet{
+        @include mobile {
+         display: flex;
+         justify-content: space-between;
+         padding-bottom:$padding-one;
+       }
+        @include tablet {
+          padding-bottom:$padding-two;
+          display: flex;
+          justify-content: space-between;
+        }
+        @include desktop{
+            width: 30%;
+        }
+    }
+    &__name-address{
+      
+        @include desktop{
+            display: flex;
+            flex-direction:column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+    }
+    &__name{
+        font-weight:$font-weight-medium;
+        padding-bottom: 10px;
+    }
+   
+    &__arrow-right-mobile-tablet{
+        @include tablet{
+            width:11px;
+            height:18px;
+            margin-top:10px;
+        }
+        @include desktop{
+            display:none;
+        }
+    }
+    &__tablet-flex{
+       @include tablet{
+           display: flex;
+           padding-bottom:$padding-two;
+           border-bottom: 1px solid $color-text-field-border ;
+
+       }
+       @include desktop{
+           width:70%;
+           border: none;
+       }
+    }
+    &__contact-one{
+      @include mobile{
+        padding-bottom:16px;
+      }
+      @include tablet{
+          width: 30%;
+      }
+      @include desktop{
+        display: flex;
+        flex-direction:column;
+        align-items: flex-start;
+        width: 30%;
+      }
+    }
+    &__contact-title{
+        padding-top:5px;
+        font-style:italic;
+    }
+    &__contact-two{
+        @include mobile{
+          padding-bottom:$padding-one;
+        }
+        @include tablet{
+            width: 30%;
+        }
+        @include desktop{
+          display: flex;
+          flex-direction:column;
+          align-items: flex-start;
+          width: 30%;
+          padding-left:16px;
+        }
+    }
+    &__contact-email{
+        padding-top: 5px;
+    }
+    &__category{
+        @include mobile{
+            border-bottom: 1px solid $color-text-field-border ;
+            padding-bottom: $padding-two;
+        }
+        @include desktop{
+            width: 30%;
+            padding-left:64px;
+        }
+    }
+    &__arrow-right-desktop{
+       @include mobile{
+        display: none;
+       }
+       @include tablet{
+        display: none;
+       }
+       @include desktop{
+        display:flex;
+        align-items: center;
+        width:11px;
+        height: 18px;
+       }
+   }
+   
+}
