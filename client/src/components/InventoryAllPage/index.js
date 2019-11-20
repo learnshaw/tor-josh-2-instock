@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import AllInventoryPage from '../Createwarehouse/Createwarehouse';
+import AllInventoryPage from '../InventoryAllPage/inventories';
+import TitleSearchBarHeader from '../TitleSearchBarHeader/index';
 import '../InventoryAllPage/styles.scss';
 
 
@@ -11,23 +12,26 @@ class InventoryList extends React.Component{
         InventoryList:[]
     }
    componentDidMount(){
-    axios.get(`http://localhost:8080/`)
+    axios.get(`http://localhost:8080/inventory`)
     .then(response=>{
        const InventoryList = response.data;
        this.setState({InventoryList:InventoryList})
-    }).catch(error=>console.log('there is an error',error))
+    })
+    .catch(error=>console.log('there is an error', error))
    }
-    render(){
-      return(
+    render() {
+      return (
         <>
-        <h1>Locations</h1>
-         <div className="location__headers">
-           <p className="location__headers-cell">WAREHOUSE</p>
-           <p className="location__headers-cell">CONTACT</p>
-           <p className="location__headers-cell">CONTACT INFORMATION</p>
-           <p className="location__headers-cell">CATEGORIES</p>
+        <TitleSearchBarHeader />
+         <div className="inventory__parent-div">
+           <h3 className="inventory__child-div">Item</h3>
+           <h3 className="inventory__child-div">Last Ordered</h3>
+           <h3 className="inventory__child-div">Location</h3>
+           <h3 className="inventory__child-div">Quantity</h3>
+           <h3 className="inventory__child-div">Status</h3>
          </div>
-       {this.state.warehousesList.map(warehouse=><Createwarehouse data={warehouse}></Createwarehouse>)}  
+         
+       {this.state.InventoryList.map(inventory=><AllInventoryPage data={inventory}></AllInventoryPage>)}  
        </>
       )
     }

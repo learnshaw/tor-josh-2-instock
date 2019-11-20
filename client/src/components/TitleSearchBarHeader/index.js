@@ -1,6 +1,6 @@
 // this component to be used for inventory and warehouse main pages 
 import React from 'react';
-import '../Components/TitleSearchBarHeader/styles.scss';
+import './styles.scss';
 
 const TitleSearchBarHeader = () => {
 

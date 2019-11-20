@@ -5,9 +5,17 @@
 .title-search-header {
 
     &__flex-div {
+
+        margin-left: $margin-one;
+
         @include tablet {
             display: flex;
             justify-content: space-between;
+            margin: 0px $margin-two;
+        }
+
+        @include desktop {
+            margin: 0px $margin-five;
         }
     }
 
@@ -32,11 +40,9 @@
         border-radius: 5px;
         padding-top: 1.375rem;
      
-        @include tablet-view {
-            width: 33%;
-            // height: 48px;
+        @include tablet {
+            width: 35%;
             margin-top: $margin-one;
-            margin-right: $margin-two;
         }
 
         &:focus {
