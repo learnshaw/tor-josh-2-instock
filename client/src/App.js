@@ -10,13 +10,13 @@ class App extends React.Component {
        <BrowserRouter>
        <Navigation/>
        <h1>hello world</h1>
-        {/* <Switch>
+        <Switch>
          <Route path="/" exact component={Warehouses}></Route>
          <Route path="/warehouses" component={Warehouses}></Route>
          <Route path="/inventory" component={Inventory}></Route>
          <Route path="/warehouses/:id" exact component={Warehousesdetails}></Route>
          <Route path="/inventory/:id" exact component={Inventorydetails}></Route>
-        </Switch> */}
+        </Switch>
        </BrowserRouter>
       </div>
     )
