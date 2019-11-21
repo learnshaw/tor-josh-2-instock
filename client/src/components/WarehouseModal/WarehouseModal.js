@@ -16,6 +16,7 @@ export default class WarehouseModal extends React.Component {
                 contentLabel="Example Modal"
                 className = "modal__parent"
                 overlayClassName = "modal__overlay"
+                appElement={document.querySelector('#root')}
             >
                 <h2 className="add__title">Add New</h2>
                 <form className="add__form" onSubmit={(e) => this.props.formSubmit(e,"submit")} onReset={(e) => this.props.closeModal()}>    
