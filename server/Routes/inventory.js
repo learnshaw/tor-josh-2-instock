@@ -38,8 +38,6 @@ router.get('/:id', (request, response) => {
 
 router.post('/', (request, response) => {
     const newID = inventoryData.length; 
-    console.log();
-
     const newAddedItem = {
         "id": `I${newID}`,
         "name": request.body.name,
@@ -49,19 +47,21 @@ router.post('/', (request, response) => {
         "location": request.body.location,
         "isInstock": request.body.isInstock,
         // will have to change isInstock once we have the switch installed
-        "categories": request.body.categories,
-        "warehouseId": request.body.warehouseId
+         // Removed by Sahiba
+        // "categories": request.body.categories,
+        // "warehouseId": request.body.warehouseId
     }
     
-    if (request.body.name && request.body.description && request.body.quantity && request.body.lastOrdered && request.body.location && request.body.isInstock && request.body.categories && request.body.warehouseId){ 
+    // IF stt adjusted by Sahiba
+    if (request.body.name && request.body.quantity && request.body.lastOrdered && request.body.location && request.body.isInstock){ 
 
         inventoryData.push(newAddedItem);
         response.send(inventoryData);
     } else { 
         return response.status(400).send('Cannot Process Order With Empty Fields');
     }
-    
-    response.send(newAddedItem);
+    // Removed by Sahiba
+    // response.send(newAddedItem);
 });
 
 module.exports = router;

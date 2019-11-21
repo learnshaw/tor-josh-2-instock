@@ -19,19 +19,31 @@ export default class InventoryModal extends React.Component {
       // references are now sync'd and can be accessed.
       // this.subtitle.style.color = '#f00';
     }
+
+    closeModal(){
+        this.setState({modalIsOpen: false});
+    }
    
-    closeModal(e, clickValue) {
+    formSubmit(e, clickValue) {
       if (clickValue){
-          return this.sendingData(
-            e.target.product.value, 
-            e.target.lastOrdered.value, 
-            e.target.city.value, 
-            e.target.country.value,
-            e.target.quantity.value,
-            e.target.description.value
-        )
+          e.preventDefault();
+          if (e.target.product.value.trim().length === 0 || 
+            e.target.lastOrdered.value.trim().length === 0 ||
+            e.target.city.value.trim().length === 0 ||
+            e.target.country.value.trim().length === 0 ||
+            e.target.quantity.value.trim().length === 0){
+                alert("please ensure all madatory field are filled.")
+          } else {
+            return this.sendingData(
+                e.target.product.value, 
+                e.target.lastOrdered.value, 
+                e.target.city.value, 
+                e.target.country.value,
+                e.target.quantity.value,
+                e.target.description.value
+            )
+        }
       }
-      this.setState({modalIsOpen: false});
     }
 
     switchHandle(e) {
@@ -40,8 +52,7 @@ export default class InventoryModal extends React.Component {
 
     //Post request
     sendingData(product, lastOrdered, city, country, quantity, description){
-        console.log(product, lastOrdered, city, country, quantity, description, this.state.inStock)
-        let url = "http://localhost:8080/inventory";
+        let url = "http://localhost:8080/inventory/";
         axios.post(url, {
             "name": `${product}`,
             "lastOrdered": `${lastOrdered}`,
@@ -54,8 +65,9 @@ export default class InventoryModal extends React.Component {
             console.log(response.data)
         })
         .catch((error) => {
-            console.log("Could not post the data, please try again.")
+            console.error("Could not post the data, please try again.")
         })
+        this.closeModal();
     }    
    
     render() {
@@ -66,27 +78,27 @@ export default class InventoryModal extends React.Component {
                 isOpen={this.state.modalIsOpen}
                 onAfterOpen={(e)=> this.afterOpenModal()}
                 onRequestClose={(e)=> {this.closeModal()}}
-                contentLabel="Example Modal Tablet"
+                contentLabel="Example Modal"
                 className = "modal__parent"
                 overlayClassName = "modal__overlay"
             >
                 <h2 className="add__product-title">Create New</h2>
-                <form className="add__product-form" onSubmit={(e) => {this.closeModal(e,"submit")}} onReset={(e) => {this.closeModal(e)}}>    
+                <form className="add__product-form" onSubmit={(e) => {this.formSubmit(e,"submit")}} onReset={(e) => {this.closeModal()}}>    
                     <div className="add__product-entry-group">
                         <label>PRODUCT</label>
-                        <input className="add__product-entry-field" placeholder="Item Name" name="product" required/>
+                        <input className="add__product-entry-field" placeholder="Item Name" name="product"/>
                     </div>
                     <div className="add__product-entry-group">
                         <label>LAST ORDERED</label>
-                        <input className="add__product-entry-field" placeholder="yyyy-mm-dd" name="lastOrdered" required/>
+                        <input className="add__product-entry-field" placeholder="yyyy-mm-dd" name="lastOrdered"/>
                     </div>
                     <div className="add__product-entry-group">
                         <label>CITY</label>
-                        <input className="add__product-entry-field" placeholder="City" name="city" required/>
+                        <input className="add__product-entry-field" placeholder="City" name="city"/>
                     </div>
                     <div className="add__product-entry-group">
                         <label>COUNTRY</label>
-                        <select className="add__product-entry-field add__product-country" name="country" required>
+                        <select className="add__product-entry-field add__product-country" name="country">
                             <option value="canada">Canada</option>
                             <option value="usa">USA</option>
                             <option value="mexico">Mexico</option>
@@ -94,7 +106,7 @@ export default class InventoryModal extends React.Component {
                     </div>
                     <div className="add__product-entry-group">
                         <label>QUANTITY</label>
-                        <input className="add__product-entry-field" placeholder="0" name="quantity" required/>
+                        <input className="add__product-entry-field" placeholder="0" name="quantity"/>
                     </div>
                     <div className="add__product-entry-group">
                         <label>STATUS</label>
@@ -119,5 +131,4 @@ export default class InventoryModal extends React.Component {
 }
 
 // @TODO 
-// remove console.logs
 // add scrolling button in country
