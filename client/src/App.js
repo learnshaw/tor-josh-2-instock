@@ -9,7 +9,8 @@ class App extends React.Component {
     return(
       <div className="App">
        <BrowserRouter>
-       <Navigation/>       
+       <Navigation/>  
+       <Inventorydetails/>     
        <h1>hello world</h1>
         {/* <Switch>
          <Route path="/" exact component={Warehouses}></Route>

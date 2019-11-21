@@ -1,11 +1,33 @@
 @import '.././styles/Base/Base.scss';
 
 .inventoryDetail {
+	&__link {
+		display: flex;
+		align-items: center;
+	}
 	&__primary {
 		font-weight: 700;
 		color: $color-text-label;
 	}
 	&__secondary {
 		font-weight: 400;
+	}
+
+	&__flexOne {
+		@include tablet {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	&__flexTwo {
+		@include tablet {
+			display: flex;
+			justify-content: space-between;
+		}
+		&__content {
+			@include desktop {
+				display: flex;
+			}
+		}
 	}
 }
