@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import InventoryModal from './components/InventoryModal/InventoryModal.js';
 import Navigation from './components/Navigation/Navigation';
+import WarehouseModal from './components/WarehouseModal/WarehouseModal.js';
 
 class App extends React.Component {
 
@@ -11,6 +12,7 @@ class App extends React.Component {
        <BrowserRouter>
        <Navigation/>
        <InventoryModal></InventoryModal>
+       <WarehouseModal></WarehouseModal>
         {/* <Switch>
          <Route path="/" exact component={Warehouses}></Route>
          <Route path="/warehouses" component={Warehouses}></Route>

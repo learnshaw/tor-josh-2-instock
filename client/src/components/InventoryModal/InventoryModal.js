@@ -82,46 +82,46 @@ export default class InventoryModal extends React.Component {
                 className = "modal__parent"
                 overlayClassName = "modal__overlay"
             >
-                <h2 className="add__product-title">Create New</h2>
-                <form className="add__product-form" onSubmit={(e) => {this.formSubmit(e,"submit")}} onReset={(e) => {this.closeModal()}}>    
-                    <div className="add__product-entry-group">
+                <h2 className="add__title">Create New</h2>
+                <form className="add__form" onSubmit={(e) => {this.formSubmit(e,"submit")}} onReset={(e) => {this.closeModal()}}>    
+                    <div className="add__entry-group">
                         <label>PRODUCT</label>
-                        <input className="add__product-entry-field" placeholder="Item Name" name="product"/>
+                        <input className="add__entry-field" placeholder="Item Name" name="product"/>
                     </div>
-                    <div className="add__product-entry-group">
+                    <div className="add__entry-group">
                         <label>LAST ORDERED</label>
-                        <input className="add__product-entry-field" placeholder="yyyy-mm-dd" name="lastOrdered"/>
+                        <input className="add__entry-field" placeholder="yyyy-mm-dd" name="lastOrdered"/>
                     </div>
-                    <div className="add__product-entry-group">
+                    <div className="add__entry-group">
                         <label>CITY</label>
-                        <input className="add__product-entry-field" placeholder="City" name="city"/>
+                        <input className="add__entry-field" placeholder="City" name="city"/>
                     </div>
-                    <div className="add__product-entry-group">
+                    <div className="add__entry-group">
                         <label>COUNTRY</label>
-                        <select className="add__product-entry-field add__product-country" name="country">
+                        <select className="add__entry-field add__country" name="country">
                             <option value="canada">Canada</option>
                             <option value="usa">USA</option>
                             <option value="mexico">Mexico</option>
                         </select>
                     </div>
-                    <div className="add__product-entry-group">
+                    <div className="add__entry-group">
                         <label>QUANTITY</label>
-                        <input className="add__product-entry-field" placeholder="0" name="quantity"/>
+                        <input className="add__entry-field" placeholder="0" name="quantity"/>
                     </div>
-                    <div className="add__product-entry-group">
+                    <div className="add__entry-group">
                         <label>STATUS</label>
-                        <article className="add__product-entry-field add__product-instock">
+                        <article className="add__entry-field add__instock">
                             <label>In Stock</label>
                             <Switch onChange={(e)=> {this.switchHandle(e)}} checked={this.state.inStock}></Switch>
                         </article>
                     </div>
-                    <article className="add__product-article">
+                    <article className="add__article">
                         <label>ITEM DESCRIPTION</label>
-                        <textarea className="add__product-description" placeholder="(Optional)" name="description"/>
+                        <textarea className="add__description" placeholder="(Optional)" name="description"/>
                     </article>
-                    <article className="add__product-buttons">
-                        <button className="add__product-button button-cancel" type="reset">CANCEL</button>
-                        <button className="add__product-button button-save" type="submit">SAVE</button>
+                    <article className="add__buttons">
+                        <button className="add__button button-cancel" type="reset">CANCEL</button>
+                        <button className="add__button button-save" type="submit">SAVE</button>
                     </article>
                 </form>
             </Modal>
