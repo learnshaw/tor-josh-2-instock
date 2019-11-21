@@ -1,83 +1,14 @@
 import React from 'react';
 import Modal from 'react-modal';
-import Switch from "react-switch";
-import axios from "axios";
 import ("../InventoryModal/InventoryModal.scss");
 import ("./WarehouseModal.scss");
 
  
-export default class WarehouseModal extends React.Component {
-    state = {
-        modalIsOpen: false,
-      };
-    
-    // openModal() {
-    //   this.setState({modalIsOpen: true});
-    // }
-   
-    // afterOpenModal() {
-    //   // references are now sync'd and can be accessed.
-    //   // this.subtitle.style.color = '#f00';
-    // }
-
-    // closeModal(){
-    //     this.setState({modalIsOpen: false});
-    // }
-   
-    // formSubmit(e, clickValue) {
-    //   if (clickValue){
-    //       e.preventDefault();
-    //       if (e.target.name.value.trim().length === 0 || 
-    //         e.target.address.value.trim().length === 0 ||
-    //         e.target.location.value.trim().length === 0 ||
-    //         e.target.contact.value.trim().length === 0 ||
-    //         e.target.position.value.trim().length === 0 ||
-    //         e.target.phone.value.trim().length === 0 ||
-    //         e.target.email.value.trim().length === 0 ||
-    //         e.target.Categories.value.trim().length === 0){
-    //             alert("please ensure all madatory field are filled.")
-    //       } else {
-    //         return this.sendingData(
-    //             e.target.name.value, 
-    //             e.target.address.value,
-    //             e.target.location.value,
-    //             e.target.contact.value,
-    //             e.target.position.value,
-    //             e.target.phone.value,
-    //             e.target.email.value,
-    //             e.target.Categories.value
-    //         )
-    //     }
-    //   }
-    // }
-
-    // //Post request
-    // sendingData(name, address, location, contact, position, phone, email, Categories){
-    //     let url = "http://localhost:8080/";
-    //     axios.post(url, {
-    //         "name": `${name}`,
-    //         "address": `${address}`,
-    //         "location": `${location}`,
-    //         "contact": `${contact}`,
-    //         "position": `${position}`,
-    //         "phone": `${phone}`,
-    //         "email": `${email}`,
-    //         "Categories": `${Categories}`
-    //     })
-    //     .then((response) => {
-    //         console.log(response.data)
-    //     })
-    //     .catch((error) => {
-    //         console.error("Could not post the data, please try again.")
-    //     })
-    //     // this.closeModal();
-    // }    
+export default class WarehouseModal extends React.Component {    
    
     render() {
-        console.log(this.props.modelIsOpen)
       return (
-        <div>
-            {/* <button onClick={(e)=> {this.openModal()}}>Open Modal</button> */}
+        <>
             <Modal
                 isOpen={this.props.modelIsOpen}
                 onAfterOpen={(e)=> this.props.afterOpenModal}
@@ -130,7 +61,7 @@ export default class WarehouseModal extends React.Component {
                     </article>
                 </form>
             </Modal>
-        </div>
+        </>
       );
     }
 }
