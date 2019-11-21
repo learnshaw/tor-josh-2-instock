@@ -23,12 +23,14 @@ class InventoryList extends React.Component{
       return (
         <>
         <TitleSearchBarHeader />
-         <div className="inventory__parent-div">
-           <h3 className="inventory__child-div">Item</h3>
-           <h3 className="inventory__child-div">Last Ordered</h3>
-           <h3 className="inventory__child-div">Location</h3>
-           <h3 className="inventory__child-div">Quantity</h3>
-           <h3 className="inventory__child-div">Status</h3>
+         <div className="inventory__tablet-parent-div">
+           <h5 className="inventory__tablet-item-title">Item</h5>
+           
+           <h5 className="inventory__tablet-title last-ordered-header">Last Ordered</h5>
+           <h5 className="inventory__tablet-title  location-header">Location</h5>
+           <h5 className="inventory__tablet-title quantity-header">Quantity</h5>
+           <h5 className="inventory__tablet-title status-header">Status</h5>
+           
          </div>
          
        {this.state.InventoryList.map(inventory=><AllInventoryPage data={inventory}></AllInventoryPage>)}  

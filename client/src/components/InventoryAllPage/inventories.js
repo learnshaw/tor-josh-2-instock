@@ -14,33 +14,41 @@ class AllInventoryPage extends React.Component{
     const itemLocation = this.props.data.location
     const itemQuantity = this.props.data.quantity 
     const itemStatus = this.props.data.isInstock
+    let itemStatusTitle = "Out Of Stock"
+    if (itemStatus === true) {
+        itemStatusTitle = "In Stock"
+    }
 
-    return(
-
-      <section className="inventory__main-section">
-         <div className="inventory__product-info">
-             <p className="inventory__product-name">{itemName}</p>
-             <p className="inventory__product-desc">{itemDesc}</p>
-         </div>
-         <div classname="inventory__last-ordered">
-             <p>{itemOrder}</p>
-         </div>
-         <div classname="inventory__item-location">
-             <p>{itemLocation}</p>
-         </div>
-         <div classname="inventory__item-quantity">
-             <p>{itemQuantity}</p>
-         </div>
-         <div classname="inventory__item-status">
-             <p>{itemStatus}</p>
-         </div>
-         {/* <div className="location__category">
-             <p>{this.props.data.inventoryCategories}</p>
-         </div> */}
-         <div className="location__arrow-right">
-          <img src={kebabButton} alt='ellipsis navigation'></img>
-         </div>
-     </section>
+    return (
+    
+        <section className="inventory__main-section">
+            <Link className="inventory__link" to="/inventory/"> {/* will need to fix this link */}
+            <h5 className="inventory__mobile-title">Item</h5>
+            <div className="inventory__item-info">
+                <h4 className="inventory__item-name">{itemName}</h4>
+                <h4 className="inventory__item-data">{itemDesc}</h4>
+            </div>
+            <h5 className="inventory__mobile-title">Last Ordered</h5>
+            <div className="inventory__item-flex ">
+                <h4 className="inventory__item-data last-ordered">{itemOrder}</h4>
+            </div>
+            <h5 className="inventory__mobile-title">Location</h5>
+            <div className="inventory__item-flex ">
+                <h4 className="inventory__item-data location">{itemLocation}</h4>
+            </div> 
+            <h5 className="inventory__mobile-title">Quantity</h5>
+            <div className="inventory__item-flex ">
+                <h4 className="inventory__item-data quantity">{itemQuantity}</h4>
+            </div>
+            <h5 className="inventory__mobile-title">Status</h5>
+            <div className="inventory__item-flex ">
+                <h4 className="inventory__item-data status">{itemStatusTitle}</h4>
+            </div>
+            </Link>
+                <div className="inventory__icon-div">
+                    <img className="inventory__kebab-icon" src={kebabButton} alt='ellipsis navigation'></img>
+                </div>
+        </section>
     )
   }
 }

@@ -1,0 +1,189 @@
+@import '../styles/Base/Base.scss';
+@import '../styles/Base/Mixin.scss';
+@import '../styles/Base/Variables.scss';
+
+
+
+.inventory { 
+
+    &__main-section {
+        margin: $margin-one;
+        border-bottom: solid 1px #e1e1e1;
+        display: flex;
+
+        @include tablet {
+            margin: 0 $margin-two;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-self: center;
+            
+        }
+
+        @include desktop {
+            margin: 0 $margin-five;
+        }
+    }
+
+   
+
+    &__link {
+        text-decoration: none;
+        color: #323232;
+        width: 100%;
+
+        @include tablet {
+            display: flex; 
+            justify-content: space-between;
+            // align-items: center;
+            margin-top: $margin-three;
+        }
+    
+    }
+
+    &__mobile-title {
+        color: #e1e1e1;
+        text-transform: uppercase;
+        margin-bottom: $margin-one;
+        font-size: 12px;
+        line-height: 20px;
+        
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__item-info {
+        @include tablet {
+            width: 224px;
+        }
+
+        @include desktop {
+            width: 344px;
+        }
+    }
+
+    &__item-flex{
+        @include tablet {
+            justify-content: space-between;
+            width: 100px; 
+            align-items: center;
+        }
+    }
+    &__item-name {
+        color: #323232;
+        font-family: 'AvenirNextLTPro-Bold', sans-serif;
+        font-weight: $font-weight-medium;
+        margin-bottom: $margin-one;
+        font-size: 13px;
+        line-height: 18px;
+        
+        @include tablet {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    &__item-data {
+        margin-bottom: $margin-two;
+        color: #323232;
+        font-size: 13px;
+        line-height: 18px;
+        font-family: 'Avenir', sans-serif;
+
+        @include tablet {
+            font-size: 13px;
+            line-height: 20px;
+            // width: 100px;
+        }
+    }
+
+
+    &__tablet-parent-div {
+        
+
+        @include tablet {
+            // margin: 0 $margin-two;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @include desktop {
+            margin: 0 $margin-five;
+        }
+    }
+    &__tablet-item-title {
+        display: none;
+
+        @include tablet {
+            display: initial;
+            font-family: 'Avenir', sans-serif;
+            width: 224px;
+            font-size: 12px;
+            color: #e1e1e1;
+            text-transform: uppercase;
+            line-height: 20px;
+            margin-top: 0;
+            padding-top: 32px;
+            margin-left: 24px;
+        } 
+
+        @include desktop {
+            width: 344px;
+            margin-left: 0px;
+        }
+    }
+
+    &__tablet-title {
+        display: none;
+
+        @include tablet {
+            font-family: 'Avenir', sans-serif;
+            display: initial;
+            align-items: center;
+            color: #e1e1e1;
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 20px;
+            width: 100px;
+            padding-top: 32px;
+            
+        }
+    }
+
+    &__kebab-icon {
+        
+        &:active:focus:hover {
+            color: #323232;
+        }
+
+        @include tablet {
+            margin-top: $margin-three;
+        }
+    } 
+}
+
+// .last-ordered-header {
+//     margin-left: -15px;
+// }
+
+// .location-header {
+//     margin-left: -10px;
+// }
+
+// .quantity-header {
+//     margin-left: -35px;
+// }
+
+.status-header {
+
+    @include tablet {
+        margin-right: 30px;
+    }
+
+    @include desktop {
+        margin-right: 5px;
+    }
+  
+}
