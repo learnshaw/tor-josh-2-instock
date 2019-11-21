@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
+import Inventorydetails from './components/Inventorydetails/Inventorydetails';
 
 class App extends React.Component {
 
@@ -8,7 +9,7 @@ class App extends React.Component {
     return(
       <div className="App">
        <BrowserRouter>
-       <Navigation/>
+       <Navigation/>       
        <h1>hello world</h1>
         {/* <Switch>
          <Route path="/" exact component={Warehouses}></Route>

@@ -1,0 +1,11 @@
+@import '.././styles/Base/Base.scss';
+
+.inventoryDetail {
+	&__primary {
+		font-weight: 700;
+		color: $color-text-label;
+	}
+	&__secondary {
+		font-weight: 400;
+	}
+}
