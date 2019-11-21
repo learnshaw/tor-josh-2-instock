@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios'
 import './Warehousesdetails.scss'
 import  backArrow from '../../assets/Icons/Icon-back-arrow.svg'
+import AllInventoryPage from '../InventoryAllPage/inventories';
 
  class Warehousesdetails extends React.Component{
    
@@ -59,8 +60,7 @@ import  backArrow from '../../assets/Icons/Icon-back-arrow.svg'
     </section> 
     <section className="inventory">
       <div className="inventory__box">
-        <h1>inventory list here</h1>
-        {/* {this.state.inventory.map(inventory=>{return <Inventorydetails key={inventory.id} data={inventory}/>})} */}
+        {this.state.inventory.map(inventory=>{return <AllInventoryPage key={inventory.id} data={inventory}/>})}
       </div>
     </section>
     </>

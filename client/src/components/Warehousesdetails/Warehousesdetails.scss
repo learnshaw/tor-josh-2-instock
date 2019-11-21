@@ -81,16 +81,16 @@
 .inventory{
     background-color: $color-text-field-background;
     
-&__box{
-    padding-top:$padding-two;
-    @include mobile{
-        @include margin-left-right-mobile();
-    }
-    @include tablet{
-        @include margin-left-right-tablet();
-      }
-    @include desktop{
-        @include margin-left-right-desktop;
-    }
-}
+// &__box{
+//     padding-top:$padding-two;
+//     @include mobile{
+//         @include margin-left-right-mobile();
+//     }
+//     @include tablet{
+//         @include margin-left-right-tablet();
+//       }
+//     @include desktop{
+//         @include margin-left-right-desktop;
+//     }
+// }
 }
