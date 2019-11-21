@@ -1,20 +1,24 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import Logo from '../../assets/Logo/Logo-instock.svg'
 import './Navigation.scss'
 
 
  class Navigation extends React.Component{
+ 
 
+  clickHandler=()=>{
+
+  }
   render(){
 
 return(
   <header className="header">
     <nav className="nav">
-      <Link to="/"><img className="nav__logo" src={Logo} alt="logo"/></Link>
+      <NavLink to="/"><img className="nav__logo" src={Logo} alt="logo"/></NavLink>
       <ul className="nav__list">
-       <Link to="/inventory"className="nav__item nav__item--change"><li >Inventory</li></Link>
-        <Link to="/warehouses" className="nav__item "><li >Locations</li></Link> 
+       <NavLink to="/inventory" activeClassName="nav__item--change" className="nav__item"><li >Inventory</li></NavLink>
+        <NavLink to="/warehouses" activeClassName="nav__item--change" className="nav__item"><li >Locations</li></NavLink> 
       </ul>
     </nav>
   </header>

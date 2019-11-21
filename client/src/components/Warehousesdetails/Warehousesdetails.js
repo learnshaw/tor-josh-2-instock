@@ -57,7 +57,7 @@ import  backArrow from '../../assets/Icons/Icon-back-arrow.svg'
     </section> 
     <section >
         <h1>product list here</h1>
-        {/* {this.state.inventory.map(inventory=>{return <Inventorydetails data={inventory}/>})} */}
+        {/* {this.state.inventory.map(inventory=>{return <Inventorydetails key={inventory.id} data={inventory}/>})} */}
     </section>
     </>
   )

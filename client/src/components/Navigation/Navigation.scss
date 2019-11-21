@@ -55,10 +55,10 @@
         padding-right:56px;
       }
     }
-    &__item:hover{
-      @include hover;
-      color:$color-hover;
-    }
+    // &__item:hover{
+    //   @include hover;
+    //   color:$color-hover;
+    // }
       &__item--change{ 
         color:$color-text-nav-footer;
         border-bottom:0.3rem solid white;
