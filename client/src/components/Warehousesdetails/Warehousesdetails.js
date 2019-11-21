@@ -5,7 +5,7 @@ import './Warehousesdetails.scss'
 import  backArrow from '../../assets/Icons/Icon-back-arrow.svg'
 
  class Warehousesdetails extends React.Component{
-
+   
     state={
         warehouse:{},
         inventory:[]
@@ -28,11 +28,12 @@ import  backArrow from '../../assets/Icons/Icon-back-arrow.svg'
     // status
 
  render(){
+     console.log(this.params.match.id)
      
  return(
    <>
     <Link to="/"className="warehouse__header-arrow">
-      <img src={backArrow} alt="backarrow"></img>
+      <img src={backArrow} alt="back-arrow"></img>
       <h1>{this.state.warehouse.name}</h1>
     </Link>
     <section  className="warehouse__adress">

@@ -1,0 +1,84 @@
+@import '../../styles/Base/Base.scss';
+
+.location-headers{
+    color:$color-text-label;
+    display: none;
+    @include desktop{
+      display: flex;
+      @include margin-left-right-desktop();   
+      align-items: flex-end;
+      justify-content: space-evenly;
+      margin-top:$margin-four;
+    }
+    &__cell{
+        margin-bottom: 40px;
+        width: 35%;
+        text-align:left;
+    }
+    &__cell-padding-left{
+        padding-left:80px;
+    }
+    &__cell-empty{
+        display: none;
+    }
+    &__add-button{
+        background-color:$color-hover;
+        border-radius:50px;
+        width:80px;
+        height:80px;
+        border: none;
+        position:sticky;
+        bottom: 20vh;
+        left:85vw;
+    }
+}
+
+.location-top{
+    @include margin-left-right-mobile();  
+    display: flex;
+    flex-direction: column;
+   @include tablet{
+       margin-top:$margin-four;
+       margin-bottom:$margin-four;
+       flex-direction: row;
+       @include margin-left-right-tablet();   
+       justify-content: space-between;
+   }
+   @include desktop{
+    @include margin-left-right-desktop();   
+   }
+    &__input-box{
+        position:relative;
+        @include mobile{
+          width: 70%;
+          margin-top:16px;
+        }
+      }
+    &__input{
+        border-radius:4px;
+        border:1px solid #E1E1E1;
+        height: 50px;
+        font-size:20px;
+        padding-left:30px;
+      
+        @include mobile{ 
+          margin-bottom:8px;
+          width:90%;
+        }
+        @include tablet{
+          margin-bottom:16px;
+          width:300px;
+        }
+    }
+      &__search-icon{
+       position: absolute;
+       @include mobile{
+        left:5px;
+        top:20px;
+       }
+      @include tablet{
+        right:270px;
+        top:20px;
+       }
+      }
+}
