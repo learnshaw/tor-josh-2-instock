@@ -22,7 +22,7 @@ class AllInventoryPage extends React.Component{
     return (
     
         <section className="inventory__main-section">
-            <Link className="inventory__link" to="/inventory/"> {/* will need to fix this link */}
+            <Link className="inventory__link" to="/inventory/:id"> {/* will need to fix this link */}
             <h5 className="inventory__mobile-title">Item</h5>
             <div className="inventory__item-info">
                 <h4 className="inventory__item-name">{itemName}</h4>
