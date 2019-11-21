@@ -1,7 +1,7 @@
 // setting up server
 const express = require("express");
 const router = express.Router();
-module.exports = router;
+
 
 // middleware
 router.use(express.json());
@@ -19,18 +19,15 @@ router.get("/",(request,response) => {
 // GET WareHouse inventory
 
 router.get("/:id",(request,response)=>{
-    
-    
-
-    const findInv = inventoryData.filter(item=>{
-       
-        
+    const warehouseItem=locationData.find(item=>{ return request.params.id ===item.id})
+    const findInv = inventoryData.filter(item=>{ 
         return request.params.id == item.warehouseId
     })
 
 
-    if(findInv){
-        response.send(findInv)
+    if(findInv  && warehouseItem){
+        response.send({warehouse:warehouseItem ,inventory:findInv})
+       
     }else{ response.status(404).send("no inventory")} 
 
    
@@ -76,6 +73,6 @@ router.post ('/', ((request,  response)=>{
 }))
 
 
-
+module.exports = router;
 
 
