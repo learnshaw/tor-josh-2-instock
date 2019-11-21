@@ -47,9 +47,8 @@ router.post('/', (request, response) => {
         "location": request.body.location,
         "isInstock": request.body.isInstock,
         // will have to change isInstock once we have the switch installed
-         // Removed by Sahiba
-        // "categories": request.body.categories,
-        // "warehouseId": request.body.warehouseId
+        "categories": request.body.categories,
+        "warehouseId": request.body.warehouseId
     }
     
     // IF stt adjusted by Sahiba
