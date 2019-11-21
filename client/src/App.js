@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import InventoryModal from './components/InventoryModal/InventoryModal.js';
 import Navigation from './components/Navigation/Navigation';
-import Warehouses from './components/Warehouses/Warehouses'
+import Warehouses from './components/Warehouses/Warehouses';
 
 class App extends React.Component {
 
