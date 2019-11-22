@@ -19,7 +19,6 @@ class InventoryList extends React.Component{
    componentDidMount(){
     axios.get(`http://localhost:8080/inventory`)
     .then(response=>{
-      console.log(response.data)
        const InventoryList = response.data;
        this.setState({InventoryList:InventoryList})
     })
@@ -49,10 +48,10 @@ class InventoryList extends React.Component{
         "location": `${city}`,
         "quantity": `${quantity}`,
         "description": `${description}`,
-        "isInstock": `${this.state.inStock}`
+        "isInstock": this.state.inStock
     })
     .then((response) => {
-
+      this.setState({InventoryList:response.data})
     })
     .catch((error) => {
         console.error("Could not post the data, please try again.")

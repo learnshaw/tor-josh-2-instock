@@ -13,8 +13,8 @@ app.listen(8080, () => {
 })
 
 // GET request for warehouses' data
-const warehousesRoute = require("./Routes/warehouse.js");
-app.use("/", warehousesRoute);
+// const warehousesRoute = require("./Routes/warehouse.js");
+// app.use("/", warehousesRoute);
 
 // inventory route for receiving all inventory data
 

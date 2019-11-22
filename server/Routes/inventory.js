@@ -11,6 +11,7 @@ router.get('/',(request,response) => {
     response.send(inventoryData);
 })
 
+
 router.delete('/:id',(request,response)=>{
     if (request.params.id){
       const inventoryList=inventoryData.filter(item=>item.id!==request.params.id)
@@ -50,9 +51,9 @@ router.post('/', (request, response) => {
         "categories": request.body.categories,
         "warehouseId": request.body.warehouseId
     }
-    
+
     // IF stt adjusted by Sahiba
-    if (request.body.name && request.body.quantity && request.body.lastOrdered && request.body.location && request.body.isInstock){ 
+    if (request.body.name && request.body.quantity && request.body.lastOrdered && request.body.location){ 
 
         inventoryData.push(newAddedItem);
         response.send(inventoryData);
