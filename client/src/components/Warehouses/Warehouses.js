@@ -15,7 +15,7 @@ class Warehouses extends React.Component{
     }
 
    componentDidMount(){
-    axios.get(`http://localhost:8080/`)
+    axios.get(`http://localhost:8080/warehouse`)
     .then(response=>{
        const warehousesList = response.data;
        this.setState({warehousesList:warehousesList})
@@ -35,7 +35,7 @@ class Warehouses extends React.Component{
   }
   //Post request
   sendingData(name, address, location, contact, position, phone, email, Categories){
-    let url = "http://localhost:8080/";
+    let url = "http://localhost:8080/warehouse";
     axios.post(url, {
         "name": `${name}`,
         "address": `${address}`,
