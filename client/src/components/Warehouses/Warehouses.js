@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Createwarehouse from '../Createwarehouse/Createwarehouse';
 import add from '../../assets/Icons/Icon-add.svg'
@@ -14,7 +13,7 @@ class Warehouses extends React.Component{
     }
 
    componentDidMount(){
-    axios.get(`http://localhost:8080/`)
+    axios.get(`http://localhost:8080/warehouses`)
     .then(response=>{
        const warehousesList = response.data;
        this.setState({warehousesList:warehousesList})
@@ -38,7 +37,7 @@ class Warehouses extends React.Component{
            <p className="location-headers__cell">CATEGORIES</p>
            <p className="location-headers__cell-empty">none</p>
          </div>
-       {this.state.warehousesList.map(warehouse=><Createwarehouse data={warehouse}></Createwarehouse>)}  
+       {this.state.warehousesList.map(warehouse=><Createwarehouse key={warehouse.id} data={warehouse}></Createwarehouse>)}  
        <button className="location-headers__add-button"><img src={add} alt="addicon"/></button>
        </>
       )
