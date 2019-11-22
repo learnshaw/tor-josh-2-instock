@@ -38,7 +38,7 @@ router.get('/:id', (request, response) => {
 
 router.post('/', (request, response) => {
     const newID = inventoryData.length; 
-    console.log();
+   
 
     const newAddedItem = {
         "id": `I${newID}`,

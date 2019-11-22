@@ -13,7 +13,7 @@ class Warehouses extends React.Component{
     }
 
    componentDidMount(){
-    axios.get(`http://localhost:8080/`)
+    axios.get(`http://localhost:8080/warehouses`)
     .then(response=>{
        const warehousesList = response.data;
        this.setState({warehousesList:warehousesList})

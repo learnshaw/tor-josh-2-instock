@@ -16,19 +16,11 @@ import AllInventoryPage from '../InventoryAllPage/inventories';
         let id=this.props.match.params.id
         axios.get(`http://localhost:8080/warehouses/${id}`)
         .then(response=>{
-          console.log(response.data)
             let warehouse=response.data.warehouse
             let inventory = response.data.inventory
             this.setState({warehouse:warehouse ,inventory:inventory})
          }).catch(error=>console.log('there is an error',error));
     }
-    // id
-    // description
-    // lastordered
-    // location
-    // quantity
-    // status
-
  render(){
    
      
@@ -43,17 +35,17 @@ import AllInventoryPage from '../InventoryAllPage/inventories';
        <>
         <div className="warehouse__address">
           <p className="warehouse__header">ADDRESS</p>
-          <p>{this.state.warehouse.address.street}</p>
-          <p className="warehouse__text">{this.state.warehouse.address.suiteNum}</p>
+          <p >{this.state.warehouse.address.street}</p>
+          <p className="warehouse__text warehouse__text-italic">{this.state.warehouse.address.suiteNum}</p>
           <p>{`${this.state.warehouse.address.city},${this.state.warehouse.address.province}`}</p>
-          <p>{`${this.state.warehouse.address.postal},CA`}</p>
+          <p className="warehouse__text-italic">{`${this.state.warehouse.address.postal},CA`}</p>
         </div>
         <div className="warehouse__conatct">
           <p className="warehouse__header">CONTACT</p>
-          <p>{this.state.warehouse.contact.name}</p>
+          <p className="warehouse__text-italic">{this.state.warehouse.contact.name}</p>
           <p className="warehouse__text">{this.state.warehouse.contact.title}</p>
           <p>{this.state.warehouse.contact.phone}</p>
-          <p>{this.state.warehouse.contact.email}</p>
+          <p className="warehouse__text-italic">{this.state.warehouse.contact.email}</p>
         </div>
      </>
       }

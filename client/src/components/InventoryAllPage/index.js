@@ -32,7 +32,7 @@ class InventoryList extends React.Component{
            
          </div>
          
-      {this.state.InventoryList.map(inventory=><AllInventoryPage data={inventory}></AllInventoryPage>)}  
+      {this.state.InventoryList.map(inventory=><AllInventoryPage key={inventory.id} data={inventory}></AllInventoryPage>)}  
        </>
       )
     }

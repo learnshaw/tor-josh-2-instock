@@ -13,7 +13,8 @@ let inventoryData = require("../Data/inventory.json");
 // GET request
 router.get("/",(request,response) => {
     response.send(locationData);
-
+  
+    
 })
 
 // GET WareHouse inventory

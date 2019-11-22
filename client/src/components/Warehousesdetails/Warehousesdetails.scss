@@ -28,10 +28,10 @@
 
 .warehouse{
    @include font-h3-subheader();
-   display: flex;
+    display: flex;
    @include mobile{
-    flex-direction: column;
-    @include margin-left-right-mobile();
+     flex-direction: column;
+     @include margin-left-right-mobile();
    }
    @include tablet{
      flex-direction:row;
@@ -40,7 +40,7 @@
      padding-bottom:$padding-two;
    }
    @include desktop{
-    @include margin-left-right-desktop;
+     @include margin-left-right-desktop;
    }
   &__address{
     @include tablet{
@@ -60,6 +60,9 @@
       @include mobile{
       margin-bottom: $margin-one;
       }
+      @include tablet{
+      margin-bottom:$margin-one;
+      }
   }
 
   &__text{
@@ -76,21 +79,12 @@
         width: 500px;
     }
   }
+  &__text-italic{
+      font-style: italic;
+  }
 }
 
 .inventory{
     background-color: $color-text-field-background;
-    
-// &__box{
-//     padding-top:$padding-two;
-//     @include mobile{
-//         @include margin-left-right-mobile();
-//     }
-//     @include tablet{
-//         @include margin-left-right-tablet();
-//       }
-//     @include desktop{
-//         @include margin-left-right-desktop;
-//     }
-// }
+
 }
