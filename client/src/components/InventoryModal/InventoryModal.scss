@@ -132,6 +132,13 @@
             margin-left: 48px;
         }
     }
+
+    &-cancel {
+        border: none;
+        @include tablet {
+            width: 160px;
+        }
+    }
     
     &-save:hover{
         background-color: $color-hover
