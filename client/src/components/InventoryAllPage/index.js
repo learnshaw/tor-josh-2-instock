@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import axios from 'axios';
 import AllInventoryPage from '../InventoryAllPage/inventories';
 import TitleSearchBarHeader from '../TitleSearchBarHeader/index';
@@ -112,6 +111,7 @@ class InventoryList extends React.Component{
           inStock = {this.state.inStock}
           >
         </InventoryModal>
+      {/* {this.state.InventoryList.map(inventory=><AllInventoryPage key={inventory.id} data={inventory}></AllInventoryPage>)}   */}
        </>
       )
     }

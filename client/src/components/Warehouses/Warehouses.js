@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Createwarehouse from '../Createwarehouse/Createwarehouse';
 import add from '../../assets/Icons/Icon-add.svg'
@@ -15,7 +14,7 @@ class Warehouses extends React.Component{
     }
 
    componentDidMount(){
-    axios.get(`http://localhost:8080/warehouse`)
+    axios.get(`http://localhost:8080/warehouses`)
     .then(response=>{
        const warehousesList = response.data;
        this.setState({warehousesList:warehousesList})
@@ -35,7 +34,7 @@ class Warehouses extends React.Component{
   }
   //Post request
   sendingData(name, address, location, contact, position, phone, email, Categories){
-    let url = "http://localhost:8080/warehouse";
+    let url = "http://localhost:8080/warehouses";
     axios.post(url, {
         "name": `${name}`,
         "address": `${address}`,
@@ -110,6 +109,8 @@ class Warehouses extends React.Component{
           closeModal={this.closeModal}
           formSubmit = {this.formSubmit}>
         </WarehouseModal>
+       {/* {this.state.warehousesList.map(warehouse=><Createwarehouse key={warehouse.id} data={warehouse}></Createwarehouse>)}  
+       <button className="location-headers__add-button"><img src={add} alt="addicon"/></button> */}
        </>
       )
     }
