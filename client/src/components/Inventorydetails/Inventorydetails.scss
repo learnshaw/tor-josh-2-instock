@@ -3,12 +3,13 @@
 .inventoryDetail {
   max-width: 288px;
   margin: 0 24px;
+  
   @include tablet {
   max-width:720px ;
   }
   @include desktop {
     // margin: 0 auto;
-    // max-width:1440px ;
+    max-width:1080px ;
     }
    
 	&__link {
@@ -23,6 +24,9 @@
       display: flex;
       align-items: center;
       }
+      @include desktop {
+        margin: 0 0 0 160px;
+        }
   }
   &__btnEdit{
     border: none;
@@ -30,7 +34,7 @@
     width: 288px;
     background-color: #004892;
     color: $color-text-nav-footer;
-    margin: 16px 0;
+    margin: 32px 0;
     height: 48px;
     @include tablet {
       position: absolute;
@@ -103,7 +107,10 @@
       width:480px ;
       display: flex;
       justify-content: space-between;
-      }      
+      }  
+      @include desktop {
+        margin-top: 36px;
+        }    
   }
   &__location{
     @include tablet {
@@ -112,18 +119,23 @@
 
   }
   &__content{
+    border-top: 1px solid $color-text-label;
+    border-bottom: 1px solid $color-text-label;
 
     @include desktop {
       display: flex;
       justify-content: space-evenly;
+      margin-left: 122px;
       } 
   
   }
-  // &__description{
-  //   @include desktop {
-  //   margin-left: 0;
-  //     }
-  // }
+  &__description{
+
+    margin-top: 36px;
+    @include desktop {
+    margin-left: 0;
+      }
+  }
 
 
 }

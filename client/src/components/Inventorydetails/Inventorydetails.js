@@ -47,6 +47,7 @@ export class Inventorydetails extends Component {
             <p className='inventoryDetail__descriptionContent inventoryDetail__secondary'>{description}</p>
           </div>
          <div>
+           
             <div className='inventoryDetail__flexOne'>
               <div className="inventoryDetail__block">
                 <p className='inventoryDetail__primary'>ORDERED BY</p>
