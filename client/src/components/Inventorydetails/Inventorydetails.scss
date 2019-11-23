@@ -1,22 +1,78 @@
 @import '../../styles/Base/Base.scss';
 
 .inventoryDetail {
+  max-width: 288px;
+  margin: 0 16px;
+   
 	&__link {
 		display: flex;
-		align-items: center;
-	}
+    align-items: center;
+    margin:$margin-two 0 $margin-one 0; 
+    
+  }
+  &__header{
+    margin-bottom: $margin-two;
+  }
+  &__btnEdit{
+    border: none;
+    border-radius: 4px;;
+    width: 288px;
+    background-color: #004892;
+    color: $color-text-nav-footer;
+    margin: 16px 0;
+    height: 48px;
+  }
+  &__aTag{
+  color: $color-text-nav-footer;
+  text-decoration: none;
+  }
+  &__btnPrimary{
+    background:#3ee746 ;
+    font-size: 12px;
+    width: 88px;
+    color: $color-text-nav-footer ;
+    text-align: center;
+    border-radius: 4px;
+    padding: 4px 0;
+
+  }
+  &__btnSecondary{
+    background:$color-text-field-border ;
+    font-size: 12px;
+    width: 88px;
+    color: $color-background-text ;
+    text-align: center;
+    border-radius: 4px;
+    padding: 4px 0;
+
+  }
+  &__title{
+    margin-bottom: 5px;;
+  }
+  &__backArrow{
+    margin-right: $margin-one;
+  }
 	&__primary {
-		font-weight: 700;
-		color: $color-text-label;
+		font-weight: 500;
+    color: $color-text-label;
+    margin-bottom: $margin-one;
+    @include font-paragraph-list-conatct() ;
 	}
 	&__secondary {
-		font-weight: 400;
-	}
+    font-weight: 400;
+    @include font-paragraph-list-conatct() ;
+  }
+  &__descriptionContent{
+    margin-bottom:$margin-two;  
+  }
+  &__block{
+    margin-bottom: $margin-two;
+  }
 
 	&__flexOne {
 		@include tablet {
 			display: flex;
-			justify-content: space-between;
+		
 		}
 	}
 	&__flexTwo {
@@ -28,6 +84,7 @@
 			@include desktop {
 				display: flex;
 			}
-		}
+    }
+
 	}
 }

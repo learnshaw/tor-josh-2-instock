@@ -20,7 +20,7 @@ export class Inventorydetails extends Component {
   }
 
   render() {
-    const {name,description,quantity,lastOrdered,location,categories}= this.state.inventoryData;
+    const {name,description,quantity,lastOrdered,location,categories,warehouseId}= this.state.inventoryData;
     let showButton;
     if (this.state.inventoryData.isInstock===true){
      showButton = <div className='inventoryDetail__btnPrimary'>In Stock</div>;
@@ -43,50 +43,43 @@ export class Inventorydetails extends Component {
 
         <section className='inventoryDetail__content'>
           <div>
-            <p className='inventoryDetail__itemDescription'>ITEM DESCRIPTION</p>
-            <p className='inventoryDetail__descriptionContent'>{description}</p>
+            <p className='inventoryDetail__itemDescription inventoryDetail__primary'>ITEM DESCRIPTION</p>
+            <p className='inventoryDetail__descriptionContent inventoryDetail__secondary'>{description}</p>
           </div>
          <div>
             <div className='inventoryDetail__flexOne'>
-              <div>
+              <div className="inventoryDetail__block">
                 <p className='inventoryDetail__primary'>ORDERED BY</p>
                 <p className='inventoryDetail__secondary'>{name}</p>
               </div>
-              <div>
+              <div className="inventoryDetail__block">
                 <p className='inventoryDetail__primary'>REFERENCE NUMBER</p>
-                <p className='inventoryDetail__secondary'>JK2020FD7811201</p>
+                <p className='inventoryDetail__secondary'>{warehouseId}</p>
               </div>
             </div>
             <div className='inventoryDetail__flexTwo'>
-              <div>
+              <div className="inventoryDetail__block">
                 <p className='inventoryDetail__primary'>LAST ORDERED</p>
                 <p className='inventoryDetail__secondary'>{lastOrdered}</p>
               </div>
-              <div>
+              <div className="inventoryDetail__block">
                 <p className='inventoryDetail__primary'>LOCATION</p>
                 <p className='inventoryDetail__secondary'>{location}</p>
               </div>           
               </div>
-              <div>
+              <div className="inventoryDetail__block">
                 <p className='inventoryDetail__primary'>QUANTITY</p>
                 <p className='inventoryDetail__secondary'>{quantity}</p>
                 </div>
-              <div>
+              <div className="inventoryDetail__block">
                   <p className='inventoryDetail__primary'>CATEGORIES</p>
                   <p className='inventoryDetail__secondary'>{categories}</p>
               </div> 
 
               </div>
-              </section>
-        
+              </section>       
 
-          <button className= 'inventoryDetail__btnSecondary'> <a href='#'>EDIT</a> </button>          
-
-   
-
-
-
-        
+          <button className= 'inventoryDetail__btnEdit'> <a className='inventoryDetail__aTag' href='#'>EDIT</a> </button>           
       </section>
     )
   }
