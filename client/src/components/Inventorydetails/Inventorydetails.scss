@@ -6,10 +6,12 @@
   
   @include tablet {
   max-width:720px ;
+  
   }
   @include desktop {
     // margin: 0 auto;
-    max-width:1080px ;
+    max-width:1440px ;
+
     }
    
 	&__link {
@@ -25,24 +27,27 @@
       align-items: center;
       }
       @include desktop {
-        margin: 0 0 0 160px;
+        margin-left:160px;
         }
   }
   &__btnEdit{
     border: none;
     border-radius: 4px;
     width: 288px;
-    background-color: #004892;
+    background-color: $color-hover;
     color: $color-text-nav-footer;
     margin: 32px 0;
     height: 48px;
+
+    // @include desktop {
+    // margin: 0;
+    //   }
+
     @include tablet {
       position: absolute;
       right: 24px;
-
       width: 160px;
       }
-    
 
   }
   &__aTag{
