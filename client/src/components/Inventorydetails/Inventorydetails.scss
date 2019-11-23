@@ -2,7 +2,14 @@
 
 .inventoryDetail {
   max-width: 288px;
-  margin: 0 16px;
+  margin: 0 24px;
+  @include tablet {
+  max-width:720px ;
+  }
+  @include desktop {
+    // margin: 0 auto;
+    // max-width:1440px ;
+    }
    
 	&__link {
 		display: flex;
@@ -12,15 +19,27 @@
   }
   &__header{
     margin-bottom: $margin-two;
+    @include tablet {
+      display: flex;
+      align-items: center;
+      }
   }
   &__btnEdit{
     border: none;
-    border-radius: 4px;;
+    border-radius: 4px;
     width: 288px;
     background-color: #004892;
     color: $color-text-nav-footer;
     margin: 16px 0;
     height: 48px;
+    @include tablet {
+      position: absolute;
+      right: 24px;
+
+      width: 160px;
+      }
+    
+
   }
   &__aTag{
   color: $color-text-nav-footer;
@@ -34,6 +53,11 @@
     text-align: center;
     border-radius: 4px;
     padding: 4px 0;
+    @include tablet {
+      width: 88px;
+      height: 24px;
+      margin-left: 24px;
+      }
 
   }
   &__btnSecondary{
@@ -44,6 +68,11 @@
     text-align: center;
     border-radius: 4px;
     padding: 4px 0;
+    @include tablet {
+      width: 88px;
+      height: 24px;
+      margin-left: 24px;
+      }
 
   }
   &__title{
@@ -69,22 +98,32 @@
     margin-bottom: $margin-two;
   }
 
-	&__flexOne {
-		@include tablet {
-			display: flex;
-		
-		}
-	}
-	&__flexTwo {
-		@include tablet {
-			display: flex;
-			justify-content: space-between;
-		}
-		&__content {
-			@include desktop {
-				display: flex;
-			}
-    }
+  &__flexOne{
+    @include tablet {
+      width:480px ;
+      display: flex;
+      justify-content: space-between;
+      }      
+  }
+  &__location{
+    @include tablet {
+      margin-right: 28px;
+      } 
 
-	}
+  }
+  &__content{
+
+    @include desktop {
+      display: flex;
+      justify-content: space-evenly;
+      } 
+  
+  }
+  // &__description{
+  //   @include desktop {
+  //   margin-left: 0;
+  //     }
+  // }
+
+
 }

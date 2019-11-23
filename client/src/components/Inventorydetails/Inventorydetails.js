@@ -42,7 +42,7 @@ export class Inventorydetails extends Component {
         </div>
 
         <section className='inventoryDetail__content'>
-          <div>
+          <div className='inventoryDetail__description'>
             <p className='inventoryDetail__itemDescription inventoryDetail__primary'>ITEM DESCRIPTION</p>
             <p className='inventoryDetail__descriptionContent inventoryDetail__secondary'>{description}</p>
           </div>
@@ -51,20 +51,20 @@ export class Inventorydetails extends Component {
               <div className="inventoryDetail__block">
                 <p className='inventoryDetail__primary'>ORDERED BY</p>
                 <p className='inventoryDetail__secondary'>{name}</p>
-              </div>
-              <div className="inventoryDetail__block">
-                <p className='inventoryDetail__primary'>REFERENCE NUMBER</p>
-                <p className='inventoryDetail__secondary'>{warehouseId}</p>
-              </div>
             </div>
-            <div className='inventoryDetail__flexTwo'>
+            <div className="inventoryDetail__block">
+              <p className='inventoryDetail__primary'>REFERENCE NUMBER</p>
+              <p className='inventoryDetail__secondary'>{warehouseId}</p>
+            </div>
+            </div>
+            <div className='inventoryDetail__flexOne'>
               <div className="inventoryDetail__block">
                 <p className='inventoryDetail__primary'>LAST ORDERED</p>
                 <p className='inventoryDetail__secondary'>{lastOrdered}</p>
               </div>
               <div className="inventoryDetail__block">
-                <p className='inventoryDetail__primary'>LOCATION</p>
-                <p className='inventoryDetail__secondary'>{location}</p>
+                <p className='inventoryDetail__primary inventoryDetail__location'>LOCATION</p>
+                <p className='inventoryDetail__secondary inventoryDetail__location'>{location}</p>
               </div>           
               </div>
               <div className="inventoryDetail__block">
