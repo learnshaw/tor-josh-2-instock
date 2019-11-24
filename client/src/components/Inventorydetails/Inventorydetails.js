@@ -15,7 +15,7 @@ export class Inventorydetails extends Component {
     axios.get(`http://localhost:8080/inventory/${this.props.match.params.id}`)
     .then(response=>{
       this.setState({inventoryData:response.data})
-    }).catch(error=>console.log('there is and error',error))
+    }).catch(error=>console.log('ID not found',error))
     }
   }
 
@@ -79,8 +79,9 @@ export class Inventorydetails extends Component {
 
               </div>
               </section>       
-
-          <button className= 'inventoryDetail__btnEdit'> <a className='inventoryDetail__aTag' href='#'>EDIT</a> </button>           
+          <div className= 'inventoryDetail__btn'>
+          <button className= 'inventoryDetail__btnEdit'> <a className='inventoryDetail__aTag' href='#'>EDIT</a> </button>    
+          </div>       
       </section>
     )
   }
