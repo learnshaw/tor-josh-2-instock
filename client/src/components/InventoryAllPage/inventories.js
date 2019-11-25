@@ -11,6 +11,7 @@ class AllInventoryPage extends React.Component{
 
     removeHandler = (event) => { 
             let id = this.props.data.id 
+            console.log(id)
             this.props.deleteItem(id)
         }
     kebabHandler = (event) =>{
@@ -35,6 +36,8 @@ class AllInventoryPage extends React.Component{
     };
 
     render() {
+        console.log(this.props);
+        
 
     const itemName = this.props.data.name
     const itemDesc = this.props.data.description
