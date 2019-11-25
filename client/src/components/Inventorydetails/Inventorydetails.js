@@ -35,7 +35,7 @@ export class Inventorydetails extends Component {
         <div className='inventoryDetail__header'>
             <div className='inventoryDetail__link'>
               <Link to="/inventory"><img className="inventoryDetail__backArrow" src={BackArrow} alt="BackArrow"/></Link>
-              <h1 className='inventoryDetail__title'>Product Name</h1>
+    <h1 className='inventoryDetail__title'>{name}</h1>
             </div>
             {showButton}
             
