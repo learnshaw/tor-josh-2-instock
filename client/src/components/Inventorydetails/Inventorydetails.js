@@ -51,7 +51,7 @@ export class Inventorydetails extends Component {
             <div className='inventoryDetail__flexOne'>
               <div className="inventoryDetail__block">
                 <p className='inventoryDetail__primary'>ORDERED BY</p>
-                <p className='inventoryDetail__secondary'>{name}</p>
+                <p className='inventoryDetail__secondary'>Mark Saunders</p>
             </div>
             <div className="inventoryDetail__block">
               <p className='inventoryDetail__primary'>REFERENCE NUMBER</p>
