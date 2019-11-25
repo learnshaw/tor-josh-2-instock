@@ -150,9 +150,7 @@
 
     &__kebab-icon {
         
-        &:active:focus:hover {
-            color: #323232;
-        }
+
 
         @include tablet {
             margin-top: $margin-three;
@@ -171,6 +169,38 @@
     }
   
 }
+.inventory__remove-div {
+    position: relative;
+    margin-top: 32px;
+}
+.inventory__remove-button {
+    position: absolute;
+    width: 161px;
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    right: 5px; 
+    margin-right: $margin-one;
+
+    @include tablet {
+        margin-top: 0px;
+        right: 0px;
+    }
+
+    @include desktop {
+        right: 0px;
+    }
+}
+.inventory__remove-div:active .inventory__remove-button {
+    display: block;
+    
+}
+
+
 
 .add-button {
     background-color:$color-hover;

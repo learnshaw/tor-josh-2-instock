@@ -26,7 +26,7 @@ import AllInventoryPage from '../InventoryAllPage/inventories';
      
  return(
    <>
-    <Link to="/"className="warehouse-link">
+    <Link to='/'className="warehouse-link">
       <img className="warehouse-link__arrow"src={backArrow} alt="back-arrow"></img>
       <h1>{this.state.warehouse.name}</h1>
     </Link>

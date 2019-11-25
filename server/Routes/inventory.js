@@ -1,7 +1,7 @@
 // imports
 const express = require('express');
 const router = express.Router();
-const inventoryData = require('../Data/inventory.json');
+let inventoryData = require('../Data/inventory.json');
 
 router.use(express.json());
 
@@ -15,7 +15,8 @@ router.get('/',(request,response) => {
 router.delete('/:id',(request,response)=>{
     if (request.params.id){
       const inventoryList=inventoryData.filter(item=>item.id!==request.params.id)
-      response.send(inventoryList)
+    inventoryData=inventoryList
+      response.send(inventoryData)
       }else{
        response.status(400)
       }

@@ -16,14 +16,10 @@ class App extends React.Component {
        {/* <Inventorydetails/> */}
         <Switch>
          <Route path="/" exact component={Warehouses}></Route>
-         <Route path="/warehouses" component={Warehouses}></Route>
-         {/* <Route path="/warehouses/:id" exact component={Warehousesdetails}></Route> */}
-         {/* <Route path="/inventory" component={Inventory}></Route> */}
          <Route path="/inventory/:id" exact component={Inventorydetails}></Route>
          <Route path="/warehouses" exact component={Warehouses}></Route>
          <Route path="/warehouses/:id" component={Warehousesdetails}></Route> 
          <Route path="/inventory" component={InventoryList}></Route>
-         {/* <Route path="/inventory/:id" exact component={Inventorydetails}></Route> */}
         </Switch>
        </BrowserRouter>
       </div>
