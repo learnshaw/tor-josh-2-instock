@@ -1,0 +1,70 @@
+@import '../../styles/Base/Base.scss';
+
+
+.header{
+    background-color:$color-background-text;
+  }
+  .nav{
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    flex-direction: column;
+    align-items: center;
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    &__logo{
+      height:25px;
+      margin-top:10px;
+      margin-bottom: $margin-one;
+      @include tablet{
+        padding-left:24px;
+        padding-right:56px;  
+        margin-top:$margin-two;
+      }
+      @include desktop{
+        padding-left:180px;
+      }
+    }
+    &__list{
+      display:flex;
+      justify-content: space-between;
+      width: 100%;
+      padding:0;
+      @include tablet{
+        margin-top:$margin-one;
+        justify-content:flex-start;
+        align-items:center;
+      }
+    }
+    &__item{
+      color:$color-text-label;
+      font-weight:$font-weight-medium;
+      text-decoration: none;
+      @include font-h3-subheader();
+      list-style:none; 
+      width: 160px;
+      display: flex;
+      justify-content:center;
+      align-items: flex-start;
+      align-self: center;
+      @include tablet{
+        width:80px;
+        padding-left:56px;
+        padding-right:56px;
+      }
+    }
+    // &__item:hover{
+    //   @include hover;
+    //   color:$color-hover;
+    // }
+      &__item--change{ 
+        color:$color-text-nav-footer;
+        border-bottom:0.3rem solid white;
+        @include tablet {
+         padding-top:22px;
+         padding-bottom:15px;
+        }
+      }
+  }

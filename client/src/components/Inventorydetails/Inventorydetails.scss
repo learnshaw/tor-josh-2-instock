@@ -1,0 +1,146 @@
+@import '../../styles/Base/Base.scss';
+
+.inventoryDetail {
+  max-width: 288px;
+  margin: 0 24px;
+  
+  @include tablet {
+  max-width:720px ;
+  
+  }
+  @include desktop {
+    margin: 0 auto;
+    max-width:1440px ;
+
+    }
+   
+	&__link {
+		display: flex;
+    align-items: center;
+    margin:$margin-two 0 $margin-one 0; 
+    
+  }
+  &__header{
+    margin-bottom: $margin-two;
+    @include tablet {
+      display: flex;
+      align-items: center;
+      }
+      @include desktop {
+        margin-left:160px;
+        }
+  }
+  &__btn{
+    @include tablet {
+    position: relative;
+   
+      }
+  }
+  &__btnEdit{
+    border: none;
+    border-radius: 4px;
+    width: 288px;
+    background-color: $color-hover;
+    color: $color-text-nav-footer;
+    margin: 32px 0;
+    height: 48px;
+    @include tablet {
+      position: absolute;
+      right: 24px;
+      width: 160px;
+      }
+  }
+  &__aTag{
+  color: $color-text-nav-footer;
+  text-decoration: none;
+  }
+  &__btnPrimary{
+    background:#3ee746 ;
+    font-size: 12px;
+    width: 88px;
+    color: $color-text-nav-footer ;
+    text-align: center;
+    border-radius: 4px;
+    padding: 4px 0;
+    @include tablet {
+      width: 88px;
+      height: 24px;
+      margin-left: 24px;
+      }
+
+  }
+  &__btnSecondary{
+    background:$color-text-field-border ;
+    font-size: 12px;
+    width: 88px;
+    color: $color-background-text ;
+    text-align: center;
+    border-radius: 4px;
+    padding: 4px 0;
+    @include tablet {
+      width: 88px;
+      height: 24px;
+      margin-left: 24px;
+      }
+
+  }
+  &__title{
+    margin-bottom: 5px;;
+  }
+  &__backArrow{
+    margin-right: $margin-one;
+  }
+	&__primary {
+		font-weight: 500;
+    color: $color-text-label;
+    margin-bottom: $margin-one;
+    @include font-paragraph-list-conatct() ;
+	}
+	&__secondary {
+    font-weight: 400;
+    @include font-paragraph-list-conatct() ;
+  }
+  &__descriptionContent{
+    margin-bottom:$margin-two;  
+  }
+  &__block{
+    margin-bottom: $margin-two;
+  }
+
+  &__flexOne{
+    @include tablet {
+      width:480px ;
+      display: flex;
+      justify-content: space-between;
+      }  
+      @include desktop {
+        margin-top: 36px;
+        }    
+  }
+  &__location{
+    @include tablet {
+      margin-right: 28px;
+      } 
+
+  }
+  &__content{
+    border-top: 1px solid $color-text-label;
+    border-bottom: 1px solid $color-text-label;
+
+    @include desktop {
+      display: flex;
+      justify-content: space-evenly;
+      margin-left: 122px;
+      } 
+  
+  }
+  &__description{
+
+    margin-top: 36px;
+    @include desktop {
+    margin-left: 0;
+      }
+  }
+
+
+}

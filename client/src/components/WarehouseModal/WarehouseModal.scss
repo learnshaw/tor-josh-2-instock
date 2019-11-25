@@ -1,0 +1,8 @@
+@import '../../styles/Base/Base.scss';
+
+.warehouse__name{
+    font-family: "Avenir";
+    @include tablet {
+        flex-basis: 100%;
+    }
+}

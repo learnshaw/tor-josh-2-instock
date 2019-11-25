@@ -1,0 +1,90 @@
+@import '../../styles/Base/Base.scss';
+
+
+.warehouse-link{
+    display:flex;
+    text-decoration:none;
+    color:$color-background-text;
+    font-weight: $font-weight-medium;
+    @include mobile{
+        @include margin-left-right-mobile();
+        margin-top:$margin-three;
+    }
+    @include tablet{
+        @include margin-left-right-tablet();
+        padding-top:$padding-two;
+        padding-bottom:$padding-two;
+        border-bottom:1px solid $color-text-field-border;
+    }
+    @include desktop{
+        @include margin-left-right-desktop;
+    }
+
+    &__arrow{  
+        margin-right:$margin-two;
+
+    }
+}
+
+.warehouse{
+   @include font-h3-subheader();
+    display: flex;
+   @include mobile{
+     flex-direction: column;
+     @include margin-left-right-mobile();
+   }
+   @include tablet{
+     flex-direction:row;
+     @include margin-left-right-tablet();
+     padding-top:$padding-two;
+     padding-bottom:$padding-two;
+   }
+   @include desktop{
+     @include margin-left-right-desktop;
+   }
+  &__address{
+    @include tablet{
+      width: 300px;
+    }
+    @include desktop{
+        width: 500px;
+    }
+    @include mobile{
+    margin-bottom:$margin-three;
+    margin-top:$margin-two;
+    }
+  }
+  &__header{
+      color:$color-text-label;
+      font-weight: $font-weight-medium;
+      @include mobile{
+      margin-bottom: $margin-one;
+      }
+      @include tablet{
+      margin-bottom:$margin-one;
+      }
+  }
+
+  &__text{
+      margin-bottom: $margin-one;
+  }
+  &__contact{
+    @include mobile{
+        margin-bottom: $margin-one;
+    }
+    @include tablet{
+        width: 300px;
+      }
+    @include desktop{
+        width: 500px;
+    }
+  }
+  &__text-italic{
+      font-style: italic;
+  }
+}
+
+.inventory{
+    background-color: $color-text-field-background;
+
+}

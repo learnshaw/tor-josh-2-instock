@@ -1,0 +1,99 @@
+// fonts mixin
+
+@mixin font-hero-header() {
+    font-size:60px;
+    line-height:68px;
+  }
+  @mixin font-h1-header(){
+    font-size: 36px;
+    line-height: 44px;
+  }
+  
+  @mixin font-h1-h2-header(){
+    font-size: 24px;
+    line-height:32px;
+  }
+  @mixin font-h3-subheader(){
+    font-size:16px;
+    line-height: 24px;
+  }
+  
+  @mixin font-subheader-paragraph-comment() {
+    font-size:14px;
+    line-height: 22px;
+  }
+  
+  @mixin font-h4-list-contact(){
+    font-size:14px;
+    line-height:20px;
+  }
+  
+  @mixin font-paragraph-list-conatct(){
+    font-size:13px;
+    line-height: 18px;
+  }
+  @mixin font-labels(){
+    font-size:12px;
+    line-height:20px;
+  }
+  // hover and image fit
+  @mixin hover{
+    opacity:0.5;
+    transition:0.7;
+  }
+  @mixin image-fit{
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+  }
+  @mixin flex-column{
+    display: flex;
+    flex-direction: column;
+  }
+// margin and media query
+  @mixin margin-left-right-mobile(){
+    margin-left:$margin-one;
+    margin-right:$margin-one;
+  }
+  @mixin margin-left-right-tablet(){
+    margin-left:$margin-two;
+    margin-right:$margin-two;
+  }
+  @mixin margin-left-right-desktop(){
+    margin-left:$margin-five;
+    margin-right:$margin-five;
+  }
+  @mixin button{
+    background-color:$color-button;
+    border-radius:4px;
+    color:$color-text-nav-footer;
+    font-size: 16px;
+    font-weight:$font-weight-medium;
+  }
+  // brainflix
+  @mixin sidevideo{
+    width: 120px;
+    height: 70px;
+    margin-right: $margin-one;
+  }
+  @mixin round-image{
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+  }
+  // brainflix
+  @mixin mobile{
+    @media (min-width:200px) and (max-width:767px){
+      @content;
+    }
+  }
+  @mixin tablet{
+    @media (min-width:768px){
+      @content;
+    }
+    }
+  @mixin desktop{
+    @media (min-width:1440px){
+      @content;
+    }
+  }
