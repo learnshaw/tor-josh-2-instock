@@ -11,6 +11,7 @@ router.get('/',(request,response) => {
     response.send(inventoryData);
 })
 
+
 router.delete('/:id',(request,response)=>{
     if (request.params.id){
       const inventoryList=inventoryData.filter(item=>item.id!==request.params.id)
@@ -52,16 +53,17 @@ router.post('/', (request, response) => {
         "categories": request.body.categories,
         "warehouseId": request.body.warehouseId
     }
-    
-    if (request.body.name && request.body.description && request.body.quantity && request.body.lastOrdered && request.body.location && request.body.isInstock && request.body.categories && request.body.warehouseId){ 
+
+    // IF stt adjusted by Sahiba
+    if (request.body.name && request.body.quantity && request.body.lastOrdered && request.body.location){ 
 
         inventoryData.push(newAddedItem);
         response.send(inventoryData);
     } else { 
         return response.status(400).send('Cannot Process Order With Empty Fields');
     }
-    
-    response.send(newAddedItem);
+    // Removed by Sahiba
+    // response.send(newAddedItem);
 });
 
 module.exports = router;
