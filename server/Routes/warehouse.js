@@ -35,7 +35,6 @@ router.get("/:id",(request,response)=>{
 })
 
 router.post ('/', ((request,  response)=>{
-    
     const newID = locationData.length; 
     const newAddedLocation ={
 
@@ -48,7 +47,7 @@ router.post ('/', ((request,  response)=>{
             "province":"Ontario",
             "postal":"M5A 8S9"
             },
-        "Categories":request.body.Categories,
+        "inventoryCategories":request.body.Categories,
         "contact": {
             "name":request.body.contact,
             "title":request.body.position,
@@ -59,13 +58,13 @@ router.post ('/', ((request,  response)=>{
 
     if (request.body.name && 
         request.body.address && 
-        request.body.location && request.body.inventoryCategories && 
+        request.body.location && request.body.Categories && 
         request.body.contact && 
-        request.body.title && 
+        request.body.position && 
         request.body.phone && 
         request.body.email){
         locationData.push(newAddedLocation)
-        response.send(newAddedLocation)
+        response.send(locationData)
     }
     else{
         return response.status(400).send('Data is Malformed or a Field is Missing');
