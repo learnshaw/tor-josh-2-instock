@@ -20,7 +20,7 @@ class Createwarehouse extends React.Component{
             <p>{address}</p>
           </div>
           <div className="location__arrow-right-mobile-tablet">
-          <img src={arrowRight}></img>
+          <img src={arrowRight} alt="arrow-right"></img>
           </div>
          </div>
          <div className="location__tablet-flex">
@@ -37,7 +37,7 @@ class Createwarehouse extends React.Component{
            </div>
          </div>
          <div className="location__arrow-right-desktop">
-          <img src={arrowRight}></img>
+          <img src={arrowRight} alt="arrow-right"></img>
          </div>
       </Link>
     )
